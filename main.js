@@ -65,7 +65,7 @@ logo.addEventListener('contextmenu', (e) => e.preventDefault());
         if (hero) {
             hero.innerHTML = `
                 <section class="hero">
-                    <img class="hero-imatge" src="${CONFIG.BASE_URL}images/hero.jpg"
+                    <img class="hero-imatge" src="${CONFIG.BASE_URL}${CONFIG.BLOC_HERO}"
                         alt="${CONFIG.NOM}">
                     <div class="hero-overlay"></div>
                     <div class="hero-contingut">
@@ -89,13 +89,13 @@ logo.addEventListener('contextmenu', (e) => e.preventDefault());
                         <div class="menu-bloc">
                             <a href="javascript:void(0)" onclick="obrirModalMenuDiari()">
                                 <div class="menu-bloc-imatge">
-                                    <img src="${CONFIG.BASE_URL}images/diari.jpg"
+                                    <img src="${CONFIG.BASE_URL}${CONFIG.BLOC1}"
                                         alt="Menú Diari"
-                                        onerror="this.src='${CONFIG.BASE_URL}images/hero.jpg'">
+                                        onerror="this.src='${CONFIG.BASE_URL}${CONFIG.BLOC_HERO}'">
                                 </div>
                                 <div class="menu-bloc-text">
-                                    <h3>Menú Diari</h3>
-                                    <p>De dilluns a divendres al migdia. Primer, segon, postre i beguda.</p>
+                                    <h3>${CONFIG.BLOC1_TITOL}</h3>
+                                    <p>${CONFIG.BLOC1_DESC}</p>
                                 </div>
                             </a>
                         </div>
@@ -103,13 +103,13 @@ logo.addEventListener('contextmenu', (e) => e.preventDefault());
                         <div class="menu-bloc">
                             <a href="javascript:void(0)" onclick="obrirModalMenuCDS()">
                                 <div class="menu-bloc-imatge">
-                                    <img src="${CONFIG.BASE_URL}images/finde.jpg"
+                                    <img src="${CONFIG.BASE_URL}${CONFIG.BLOC2}"
                                         alt="Menú Cap de Setmana"
-                                        onerror="this.src='${CONFIG.BASE_URL}images/hero.jpg'">
+                                        onerror="this.src='${CONFIG.BASE_URL}${CONFIG.BLOC_HERO}'">
                                 </div>
                                 <div class="menu-bloc-text">
-                                    <h3>Menú Cap de Setmana</h3>
-                                    <p>Dissabte i diumenge. Una selecció especial per gaudir en família.</p>
+                                    <h3>${CONFIG.BLOC2_TITOL}</h3>
+                                    <p>${CONFIG.BLOC2_DESC}</p>
                                 </div>
                             </a>
                         </div>
@@ -117,13 +117,13 @@ logo.addEventListener('contextmenu', (e) => e.preventDefault());
                         <div class="menu-bloc">
                             <a href="javascript:void(0)" onclick="obrirModalMenuGrups()">
                                 <div class="menu-bloc-imatge">
-                                    <img src="${CONFIG.BASE_URL}images/grups.jpg"
+                                    <img src="${CONFIG.BASE_URL}${CONFIG.BLOC3}"
                                         alt="Menú Grups"
-                                        onerror="this.src='${CONFIG.BASE_URL}images/hero.jpg'">
+                                        onerror="this.src='${CONFIG.BASE_URL}${CONFIG.BLOC_HERO}'">
                                 </div>
                                 <div class="menu-bloc-text">
-                                    <h3>Menú Grups</h3>
-                                    <p>Per a celebracions i esdeveniments. Consulta'ns per personalitzar el teu menú.</p>
+                                    <h3>${CONFIG.BLOC3_TITOL}</h3>
+                                    <p>${CONFIG.BLOC3_DESC}</p>
                                 </div>
                             </a>
                         </div>
@@ -134,20 +134,17 @@ logo.addEventListener('contextmenu', (e) => e.preventDefault());
                 <hr class="separador">
 
                 <section class="seccio" id="qui-som">
-                    <h2 class="seccio-titol">Qui som</h2>
-                    <p class="seccio-text">
-                        Escriu aquí la descripció del negocio. Qui sou,
-                        què oferiu, quina és la vostra filosofia.
-                    </p>
+                    <h2 class="seccio-titol">${CONFIG.QUI_SOM}</h2>
+                    <p class="seccio-text">${CONFIG.QUI_DESC}</p>
                 </section>
 
                 <hr class="separador">
 
                 <section class="seccio" id="horaris">
                     <h2 class="seccio-titol">Horaris</h2>
-                    <p class="seccio-text">Dilluns a divendres: 13:00 – 15:30h</p>
-                    <p class="seccio-text">Divendres i dissabte nit: 20:45 – 23:30h</p>
-                    <p class="seccio-text">Diumenge: Tancat</p>
+                    <p class="seccio-text">${CONFIG.HORA_1}</p>
+                    <p class="seccio-text">${CONFIG.HORA_2}</p>
+                    <p class="seccio-text">${CONFIG.HORA_3}</p>
                 </section>
 
                 <hr class="separador">

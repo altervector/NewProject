@@ -375,9 +375,10 @@ a:hover {
     font-size:8rem;
     }
 
-    .seccio {
-    width: 95%;
-    padding: 40px 300px;
+   .seccio {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px 50px;
     }
 
     .menu-bloc-imatge img {

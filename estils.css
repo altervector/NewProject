@@ -248,6 +248,11 @@ a:hover {
 }
 
 /* ─── 6. BLOCS DE MENÚ ───────────────────────────────────── */
+.menus-grid {
+    display: grid;
+    gap: 20px;
+}
+
 .menu-bloc {
     margin-bottom: 24px;
     cursor: pointer;

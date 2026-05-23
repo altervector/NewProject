@@ -475,7 +475,13 @@
                         Entrar
                     </button>
                     <p id="login-error" style="color:#e74c3c; font-size:12px;
-                        margin-top:12px; min-height:18px;"></p>
+                        margin-top:12px; min-height:18px;">
+                    </p>
+                        <button onclick="history.back()"
+                        style="margin-top:16px; background:none; border:none;
+                        color:#555; font-size:12px; cursor:pointer; letter-spacing:1px;">
+                        Cancel·lar
+                        </button>
                 </div>
             </div>
         `;

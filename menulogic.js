@@ -45,6 +45,8 @@
                     max-width: 320px;
                     text-align: center;
                     font-family: 'Segoe UI', sans-serif;">
+                    <img src="${CONFIG.BASE_URL}${CONFIG.LOGO}" alt="${CONFIG.NOM}"
+                        style="height:60px; margin: 0 auto 20px auto; display:block;">
                     <p style="color:#c8973a; letter-spacing:2px; text-transform:uppercase;
                         font-size:12px; margin-bottom:20px;">Accés restringit</p>
                     <input id="login-input" type="text" placeholder="Contrasenya"

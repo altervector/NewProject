@@ -11,7 +11,7 @@ const CONFIG = {
     SLOGAN:         "Plaça Vella",
     TELEFON:        "93 788 72 91 - 625 52 52 79",
     EMAIL:          "agora@altervector.com",
-    ADRECA:         "Carrer, número, població",
+    ADRECA:         "Carrer de Jaume Cantarer, 4, 08221 Terrassa, Barcelona",
     INSTAGRAM:      "https://www.instagram.com/agoraplazavella",
     FACEBOOK:       "https://www.facebook.com/",
     EMAIL_SUPORT:   "suport@altervector.com",
@@ -49,9 +49,9 @@ const CONFIG = {
     QUI_SOM:         "Qui som...",
     QUI_DESC:        "Escriu aquí la descripció del negocio. Qui sou, què oferiu, quina és la vostra filosofia.",
 
-    HORA_1:          "Dilluns a divendres: 13:00 – 15:30h",
-    HORA_2:          "Divendres i dissabte nit: 20:30 – 23:30h",
-    HORA_3:          "Diumenge: Tancat",
+    HORA_1:          "Dilluns a divendres: 08:00 – 23:00h",
+    HORA_2:          "Divendres i dissabte nit: 08:00 – 24:00h",
+    HORA_3:          "Diumenge: 09:00 - 23:00h",
 
 
     // 3. SEGURETAT (de moment buit, s'activa quan pujem a producció)

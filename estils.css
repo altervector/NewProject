@@ -38,7 +38,7 @@
 }
 
 html {
-    background-image: url("images/background-agora.jpg");
+    background-image: url("images/background-agora.jpg");;
     background-attachment: fixed;
     background-size: cover;                    
     background-position: center;

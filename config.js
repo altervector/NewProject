@@ -26,9 +26,9 @@ const CONFIG = {
     // 2.2 RUTES Imatges
     BACKGROUND:      "",
     BLOC_HERO:       "images/hero-agora.png",
-    BLOC1:           "images/diari.jpg",
-    BLOC2:           "images/finde.jpg",
-    BLOC3:           "images/grups.jpg",
+    BLOC1:           "images/diari.png",
+    BLOC2:           "images/finde.png",
+    BLOC3:           "images/grups.png",
     BLOC4:           "",
 
     // 2.3 RUTES Textos

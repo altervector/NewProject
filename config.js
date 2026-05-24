@@ -24,7 +24,7 @@ const CONFIG = {
     URL_OFICIAL:    "https://agora.altervector.com",
 
     // 2.2 RUTES Imatges
-    BACKGROUND:      "images/background-agora.jpg",
+    //BACKGROUND:      "Canviar en el css  .html",
     BLOC_HERO:       "images/hero-agora.png",
     BLOC1:           "images/diari.png",
     BLOC2:           "images/finde.png",

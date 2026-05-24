@@ -9,7 +9,7 @@ const CONFIG = {
     NOM:            "àgora",
     LOGO:           "Icon/logoAGtrans.png",
     SLOGAN:         "Plaça Vella",
-    TELEFON:        "+34 000 000 000",
+    TELEFON:        "93 788 72 91 - 625 52 52 79",
     EMAIL:          "agora@altervector.com",
     ADRECA:         "Carrer, número, població",
     INSTAGRAM:      "https://www.instagram.com/agoraplazavella",

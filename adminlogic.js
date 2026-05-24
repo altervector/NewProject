@@ -1,5 +1,5 @@
 /* ============================================================
-   ADMINLOGIC.JS - Panel d'administració de agora
+   ADMINLOGIC.JS - Panel d'administració de Àgora
    Depèn de: config.js, api.js
    ============================================================ */
 
@@ -10,10 +10,7 @@
     estils.textContent = `
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        html {
-            background-image: none;
-            background: #1a1a2e;
-        }
+        html { background-image: none; background: #1a1a2e; }
 
         body {
             background: #1a1a2e;
@@ -52,17 +49,8 @@
             white-space: nowrap;
         }
 
-        tbody tr:hover {
-            background: #22223a;
-        }
-
-        tbody tr.guardant {
-            background: #2c3e20;
-        }
-
-        tbody tr.fila-nova {
-            background: #1a2a1a;
-        }
+        tbody tr:hover { background: #22223a; }
+        tbody tr.guardant { background: #2c3e20; }
 
         input[type="text"],
         input[type="number"],
@@ -83,6 +71,14 @@
             border-bottom: 1px solid #c8973a;
         }
 
+        /* ─── Eliminar fletxes del camp preu (tots els navegadors) ─── */
+        input[type="number"] { -moz-appearance: textfield; }
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
         input[type="checkbox"] {
             width: 16px;
             height: 16px;
@@ -90,10 +86,11 @@
             accent-color: #c8973a;
         }
 
-        .col-nom { min-width: 160px; }
-        .col-preu { width: 70px; }
-        .col-check { width: 80px; text-align: center; }
+        .col-nom    { min-width: 160px; }
+        .col-preu   { width: 70px; }
+        .col-check  { width: 80px; text-align: center; }
         .col-seccio { width: 110px; }
+        .col-delete { width: 40px; text-align: center; }
 
         /* ─── BARRA STICKY ─── */
         #admin-barra {
@@ -109,6 +106,18 @@
             margin: -20px -20px 10px -20px;
         }
 
+        #btn-nou {
+            background: none;
+            color: #c8973a;
+            border: 1px solid #c8973a;
+            padding: 6px 16px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        #btn-nou:hover { background: #c8973a; color: #1a1a2e; }
+
         #btn-guardar {
             background: #2c3e35;
             color: #555;
@@ -119,17 +128,8 @@
             cursor: not-allowed;
             text-transform: uppercase;
         }
-
-        #btn-guardar.actiu {
-            color: #c8973a;
-            border-color: #c8973a;
-            cursor: pointer;
-        }
-
-        #btn-guardar.actiu:hover {
-            background: #c8973a;
-            color: #1a1a2e;
-        }
+        #btn-guardar.actiu { color: #c8973a; border-color: #c8973a; cursor: pointer; }
+        #btn-guardar.actiu:hover { background: #c8973a; color: #1a1a2e; }
 
         #btn-descartar {
             background: none;
@@ -141,23 +141,23 @@
             cursor: not-allowed;
             text-transform: uppercase;
         }
+        #btn-descartar.actiu { color: #e74c3c; border-color: #e74c3c; cursor: pointer; }
+        #btn-descartar.actiu:hover { background: #e74c3c; color: white; }
 
-        #btn-descartar.actiu {
-            color: #e74c3c;
-            border-color: #e74c3c;
-            cursor: pointer;
-        }
-
-        #btn-descartar.actiu:hover {
-            background: #e74c3c;
-            color: white;
-        }
-
-        #admin-comptador {
-            font-size: 11px;
+        #btn-recarregar {
+            margin-left: auto;
+            background: none;
             color: #555;
+            border: 1px solid #333;
+            padding: 6px 16px;
+            font-size: 12px;
             letter-spacing: 1px;
+            cursor: pointer;
+            text-transform: uppercase;
         }
+        #btn-recarregar:hover { color: #c8973a; border-color: #c8973a; }
+
+        #admin-comptador { font-size: 11px; color: #555; letter-spacing: 1px; }
 
         #admin-estat {
             position: fixed;
@@ -169,15 +169,117 @@
             font-weight: bold;
             color: #c8973a;
             letter-spacing: 1px;
-            border: 0px solid #c8973a;
             padding: 6px 16px;
             pointer-events: none;
         }
 
         /* ─── CEL·LA AMB CANVI PENDENT ─── */
-        .pendent {
-            outline: 2px solid #ff0000 !important;
+        .pendent { outline: 2px solid #ff0000 !important; }
+
+        /* ─── FILA MARCADA PER ELIMINAR ─── */
+        tr.per-eliminar td { opacity: 0.4; text-decoration: line-through; }
+
+        /* ─── BOTÓ DELETE ─── */
+        .btn-delete {
+            background: none;
+            border: none;
+            color: #555;
+            font-size: 15px;
+            cursor: pointer;
+            padding: 2px 6px;
+            line-height: 1;
         }
+        .btn-delete:hover { color: #e74c3c; }
+        .btn-delete.marcat { color: #e74c3c; }
+
+        /* ─── MODAL NOU PLAT ─── */
+        #modal-nou-plat {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #modal-nou-plat .modal-caixa {
+            background: #0d0d1a;
+            border: 1px solid #c8973a;
+            width: 90%;
+            max-width: 400px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        #modal-nou-plat h2 {
+            color: #c8973a;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        #modal-nou-plat input[type="text"],
+        #modal-nou-plat input[type="number"],
+        #modal-nou-plat select {
+            width: 100%;
+            background: #1a1a2e;
+            border: 1px solid #333;
+            color: #eee;
+            font-size: 13px;
+            padding: 8px 10px;
+            outline: none;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        #modal-nou-plat input:focus,
+        #modal-nou-plat select:focus { border-color: #c8973a; }
+
+        #modal-nou-plat .modal-fila {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #modal-nou-plat .modal-boto-crear {
+            background: #2c3e35;
+            color: #555;
+            border: 1px solid #555;
+            padding: 10px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: not-allowed;
+            width: 100%;
+        }
+        #modal-nou-plat .modal-boto-crear.actiu {
+            color: #c8973a;
+            border-color: #c8973a;
+            cursor: pointer;
+        }
+        #modal-nou-plat .modal-boto-crear.actiu:hover {
+            background: #c8973a;
+            color: #1a1a2e;
+        }
+
+        #modal-nou-plat .modal-boto-cancel {
+            background: none;
+            border: none;
+            color: #555;
+            font-size: 12px;
+            cursor: pointer;
+            letter-spacing: 1px;
+            text-align: center;
+            width: 100%;
+            padding: 6px;
+        }
+        #modal-nou-plat .modal-boto-cancel:hover { color: #e74c3c; }
     `;
     document.head.appendChild(estils);
 
@@ -188,11 +290,10 @@
     // ─── ACTUALITZAR BARRA ───────────────────────────────────
     const actualitzarBarra = () => {
         const total = Object.values(window.CANVIS_PENDENTS).reduce((acc, dades) => acc + Object.keys(dades).length, 0);
-        const btnGuardar = document.getElementById('btn-guardar');
+        const btnGuardar   = document.getElementById('btn-guardar');
         const btnDescartar = document.getElementById('btn-descartar');
-        const comptador = document.getElementById('admin-comptador');
+        const comptador    = document.getElementById('admin-comptador');
         if (!btnGuardar) return;
-
         if (total > 0) {
             btnGuardar.classList.add('actiu');
             btnDescartar.classList.add('actiu');
@@ -204,13 +305,11 @@
         }
     };
 
-    // ─── MARCAR CEL·LA COM A PENDENT ─────────────────────────
-    const marcarPendent = (el) => el.classList.add('pendent');
+    const marcarPendent     = (el) => el.classList.add('pendent');
     const desmarcarPendents = () => {
         document.querySelectorAll('.pendent').forEach(el => el.classList.remove('pendent'));
     };
 
-    // ─── ACUMULAR CANVI AL BUFFER ────────────────────────────
     const acumularCanvi = (id, dades, el) => {
         if (!id) return;
         if (!window.CANVIS_PENDENTS[id]) window.CANVIS_PENDENTS[id] = {};
@@ -219,19 +318,15 @@
         actualitzarBarra();
     };
 
-    // ─── GUARDAR TOT (PUSH PER LOTS DE 10) ───────────────────
+    // ─── GUARDAR TOT ─────────────────────────────────────────
     const guardarTot = async () => {
-        const estat = document.getElementById('admin-estat');
+        const estat    = document.getElementById('admin-estat');
         const entrades = Object.entries(window.CANVIS_PENDENTS);
         if (entrades.length === 0) return;
-
         estat.textContent = '⏳ Guardant...';
 
-        // Trossejar en grups de 10
         const lots = [];
-        for (let i = 0; i < entrades.length; i += 10) {
-            lots.push(entrades.slice(i, i + 10));
-        }
+        for (let i = 0; i < entrades.length; i += 10) lots.push(entrades.slice(i, i + 10));
 
         let totOk = true;
         for (const lot of lots) {
@@ -243,9 +338,7 @@
                         body: JSON.stringify({ id, ...dades })
                     });
                     if (!res.ok) totOk = false;
-                } catch (e) {
-                    totOk = false;
-                }
+                } catch (e) { totOk = false; }
             }
         }
 
@@ -260,31 +353,94 @@
         }
     };
 
-    // ─── DESCARTAR CANVIS ────────────────────────────────────
     const descartarCanvis = () => {
         window.CANVIS_PENDENTS = {};
         location.reload();
     };
 
+
+    // ─── MODAL NOU PLAT ──────────────────────────────────────
+
+    const obrirModalNouPlat = () => {
+        document.getElementById('modal-nom').value       = '';
+        document.getElementById('modal-preu').value      = '';
+        document.getElementById('modal-seccio').value    = 'Entrants';
+        document.getElementById('modal-visible').checked = true;
+        const btnCrear = document.getElementById('modal-btn-crear');
+        btnCrear.classList.remove('actiu');
+        btnCrear.disabled    = true;
+        btnCrear.textContent = 'CREAR PLAT';
+        document.getElementById('modal-nou-plat').style.display = 'flex';
+        setTimeout(() => document.getElementById('modal-nom').focus(), 100);
+    };
+
+    const tancarModalNouPlat = () => {
+        document.getElementById('modal-nou-plat').style.display = 'none';
+    };
+
+    const crearNouPlat = async () => {
+        const nom = document.getElementById('modal-nom').value.trim();
+        if (!nom) return;
+
+        const dades = {
+            Nom:     nom,
+            Preu:    parseFloat(document.getElementById('modal-preu').value.replace(',', '.')) || 0,
+            Seccio:  [document.getElementById('modal-seccio').value],
+            Visible: document.getElementById('modal-visible').checked
+        };
+
+        const btnCrear = document.getElementById('modal-btn-crear');
+        btnCrear.textContent = '⏳ Creant...';
+        btnCrear.classList.remove('actiu');
+        btnCrear.disabled = true;
+
+        try {
+            const res = await fetch(CONFIG.BASE_WORKER, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(dades)
+            });
+            if (res.ok) {
+                tancarModalNouPlat();
+                location.reload();
+            } else {
+                btnCrear.textContent = 'CREAR PLAT';
+                btnCrear.classList.add('actiu');
+                btnCrear.disabled = false;
+                document.getElementById('admin-estat').textContent = '❌ Error al crear';
+            }
+        } catch (e) {
+            btnCrear.textContent = 'CREAR PLAT';
+            btnCrear.classList.add('actiu');
+            btnCrear.disabled = false;
+            document.getElementById('admin-estat').textContent = '❌ Error de connexió';
+        }
+    };
+
+    const nomInputHandler = () => {
+        const nom      = document.getElementById('modal-nom').value.trim();
+        const btnCrear = document.getElementById('modal-btn-crear');
+        if (nom) { btnCrear.classList.add('actiu'); btnCrear.disabled = false; }
+        else     { btnCrear.classList.remove('actiu'); btnCrear.disabled = true; }
+    };
+
+
     // ─── CREAR FILA ──────────────────────────────────────────
-    const crearFila = (r, esNova = false) => {
-        const f = r.fields || {};
+    const crearFila = (r) => {
+        const f  = r.fields || {};
         const id = r.id || null;
 
         const getSeccio = (s) => Array.isArray(s) ? s[0] : (s || '');
 
         const fila = document.createElement('tr');
         if (id) fila.setAttribute('data-id', id);
-        if (esNova) fila.classList.add('fila-nova');
 
         const seccions = ['Entrants', 'Primer', 'Segon', 'Postres', 'Vins', 'Peu'];
 
         const onBlurText = (camp, el) => {
             const valorOriginal = el.value;
             el.addEventListener('blur', () => {
-                if (el.value !== valorOriginal) {
-                    acumularCanvi(id, { [camp]: el.value }, el);
-                }
+                if (el.value !== valorOriginal) acumularCanvi(id, { [camp]: el.value }, el);
             });
         };
 
@@ -292,33 +448,27 @@
             const valorOriginal = parseFloat(el.value) || 0;
             el.addEventListener('blur', () => {
                 const valorNou = parseFloat(el.value) || 0;
-                if (valorNou !== valorOriginal) {
-                    acumularCanvi(id, { [camp]: valorNou }, el);
-                }
+                if (valorNou !== valorOriginal) acumularCanvi(id, { [camp]: valorNou }, el);
             });
         };
 
         const onChangeCheck = (camp, el) => {
             const valorOriginal = el.checked;
             el.addEventListener('change', () => {
-                if (el.checked !== valorOriginal) {
-                    acumularCanvi(id, { [camp]: el.checked }, el);
-                }
+                if (el.checked !== valorOriginal) acumularCanvi(id, { [camp]: el.checked }, el);
             });
         };
 
         const onChangeSel = (camp, el) => {
             const valorOriginal = el.value;
             el.addEventListener('change', () => {
-                if (el.value !== valorOriginal) {
-                    acumularCanvi(id, { [camp]: [el.value] }, el);
-                }
+                if (el.value !== valorOriginal) acumularCanvi(id, { [camp]: [el.value] }, el);
             });
         };
 
         // Visible
         const cbVisible = document.createElement('input');
-        cbVisible.type = 'checkbox';
+        cbVisible.type    = 'checkbox';
         cbVisible.checked = f.Visible === true;
         onChangeCheck('Visible', cbVisible);
         const tdVisible = document.createElement('td');
@@ -327,46 +477,17 @@
 
         // Nom
         const inputNom = document.createElement('input');
-        inputNom.type = 'text';
+        inputNom.type  = 'text';
         inputNom.value = f.Nom || '';
-        inputNom.placeholder = esNova ? 'Escriu el nom i prem Tab...' : '';
-        if (esNova) {
-            inputNom.addEventListener('blur', async () => {
-                if (!inputNom.value.trim()) return;
-                const estat = document.getElementById('admin-estat');
-                estat.textContent = '⏳ Creant plat...';
-                try {
-                    const res = await fetch(CONFIG.BASE_WORKER, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            Nom: inputNom.value.trim(),
-                            Preu: 0,
-                            Seccio: ['Entrants'],
-                            Visible: false
-                        })
-                    });
-                    if (res.ok) {
-                        estat.textContent = '✅ Plat creat — recarregant...';
-                        setTimeout(() => location.reload(), 1000);
-                    } else {
-                        estat.textContent = '❌ Error al crear';
-                    }
-                } catch (e) {
-                    estat.textContent = '❌ Error de connexió';
-                }
-            });
-        } else {
-            onBlurText('Nom', inputNom);
-        }
+        onBlurText('Nom', inputNom);
         const tdNom = document.createElement('td');
         tdNom.className = 'col-nom';
         tdNom.appendChild(inputNom);
 
         // Preu
         const inputPreu = document.createElement('input');
-        inputPreu.type = 'number';
-        inputPreu.step = '0.01';
+        inputPreu.type  = 'number';
+        inputPreu.step  = '0.01';
         inputPreu.value = f.Preu || 0;
         onBlurNum('Preu', inputPreu);
         const tdPreu = document.createElement('td');
@@ -375,7 +496,7 @@
 
         // Menu_Diari
         const cbDiari = document.createElement('input');
-        cbDiari.type = 'checkbox';
+        cbDiari.type    = 'checkbox';
         cbDiari.checked = f.Menu_Diari === true;
         onChangeCheck('Menu_Diari', cbDiari);
         const tdDiari = document.createElement('td');
@@ -384,7 +505,7 @@
 
         // Menu_CDS
         const cbCDS = document.createElement('input');
-        cbCDS.type = 'checkbox';
+        cbCDS.type    = 'checkbox';
         cbCDS.checked = f.Menu_CDS === true;
         onChangeCheck('Menu_CDS', cbCDS);
         const tdCDS = document.createElement('td');
@@ -393,7 +514,7 @@
 
         // Menu_Grups
         const cbGrups = document.createElement('input');
-        cbGrups.type = 'checkbox';
+        cbGrups.type    = 'checkbox';
         cbGrups.checked = f.Menu_Grups === true;
         onChangeCheck('Menu_Grups', cbGrups);
         const tdGrups = document.createElement('td');
@@ -404,8 +525,7 @@
         const sel = document.createElement('select');
         seccions.forEach(s => {
             const opt = document.createElement('option');
-            opt.value = s;
-            opt.textContent = s;
+            opt.value = s; opt.textContent = s;
             if (getSeccio(f.Seccio) === s) opt.selected = true;
             sel.appendChild(opt);
         });
@@ -416,7 +536,7 @@
 
         // Carta
         const cbCarta = document.createElement('input');
-        cbCarta.type = 'checkbox';
+        cbCarta.type    = 'checkbox';
         cbCarta.checked = f.Carta === true;
         onChangeCheck('Carta', cbCarta);
         const tdCarta = document.createElement('td');
@@ -425,12 +545,35 @@
 
         // Vins
         const cbVins = document.createElement('input');
-        cbVins.type = 'checkbox';
+        cbVins.type    = 'checkbox';
         cbVins.checked = f.Vins === true;
         onChangeCheck('Vins', cbVins);
         const tdVins = document.createElement('td');
         tdVins.className = 'col-check';
         tdVins.appendChild(cbVins);
+
+        // Botó eliminar
+        const btnDel = document.createElement('button');
+        btnDel.className   = 'btn-delete';
+        btnDel.textContent = '🗑';
+        btnDel.title       = 'Marcar per eliminar';
+        btnDel.addEventListener('click', () => {
+            if (fila.classList.contains('per-eliminar')) {
+                fila.classList.remove('per-eliminar');
+                btnDel.classList.remove('marcat');
+                if (window.CANVIS_PENDENTS[id]) {
+                    delete window.CANVIS_PENDENTS[id];
+                    actualitzarBarra();
+                }
+            } else {
+                fila.classList.add('per-eliminar');
+                btnDel.classList.add('marcat');
+                acumularCanvi(id, { _delete: true }, btnDel);
+            }
+        });
+        const tdDelete = document.createElement('td');
+        tdDelete.className = 'col-delete';
+        tdDelete.appendChild(btnDel);
 
         fila.appendChild(tdVisible);
         fila.appendChild(tdNom);
@@ -441,9 +584,11 @@
         fila.appendChild(tdSeccio);
         fila.appendChild(tdCarta);
         fila.appendChild(tdVins);
+        fila.appendChild(tdDelete);
 
         return fila;
     };
+
 
     // ─── MOSTRAR LOGIN ───────────────────────────────────────
     const mostrarLogin = () => {
@@ -452,22 +597,20 @@
         if (!panel) return;
 
         panel.innerHTML = `
-            <div style="
-                display: flex; align-items: center; justify-content: center;
-                min-height: 100vh; padding: 20px; margin: -20px;">
-                <div style="
-                    background: #0d0d1a; border: 1px solid #c8973a;
-                    padding: 40px 30px; width: 90%; max-width: 320px;
-                    text-align: center; font-family: 'Segoe UI', sans-serif;">
+            <div style="display:flex; align-items:center; justify-content:center;
+                min-height:100vh; padding:20px; margin:-20px;">
+                <div style="background:#0d0d1a; border:1px solid #c8973a;
+                    padding:40px 30px; width:90%; max-width:320px;
+                    text-align:center; font-family:'Segoe UI', sans-serif;">
                     <img src="${CONFIG.BASE_URL}${CONFIG.LOGO}" alt="${CONFIG.NOM}"
-                        style="height:60px; margin: 0 auto 20px auto;">
+                        style="height:60px; margin:0 auto 20px auto; display:block;">
                     <p style="color:#c8973a; letter-spacing:2px; text-transform:uppercase;
                         font-size:12px; margin-bottom:20px;">Accés restringit</p>
                     <input id="login-input" type="text" placeholder="Contrasenya"
                         autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
-                        style="width:100%; padding:10px; background:#1a1a2e; border:1px solid #444;
+                        style="width:100%; padding:10px; background:#0d0d1a; border:1px solid #444;
                         color:#eee; font-size:14px; outline:none; margin-bottom:12px;
-                        text-align:center; letter-spacing:2px; -webkit-text-security: disc;">
+                        text-align:center; letter-spacing:2px; -webkit-text-security:disc;">
                     <button id="login-boto"
                         style="width:100%; padding:10px; background:#2c3e35; color:#c8973a;
                         border:1px solid #c8973a; font-size:13px; letter-spacing:1px;
@@ -475,13 +618,12 @@
                         Entrar
                     </button>
                     <p id="login-error" style="color:#e74c3c; font-size:12px;
-                        margin-top:12px; min-height:18px;">
-                    </p>
-                        <button onclick="history.back()"
+                        margin-top:12px; min-height:18px;"></p>
+                    <button onclick="history.back()"
                         style="margin-top:16px; background:none; border:none;
                         color:#555; font-size:12px; cursor:pointer; letter-spacing:1px;">
                         Cancel·lar
-                        </button>
+                    </button>
                 </div>
             </div>
         `;
@@ -489,11 +631,11 @@
         const fer_login = async () => {
             const input = document.getElementById('login-input');
             const error = document.getElementById('login-error');
-            const clau = input.value.trim();
+            const clau  = input.value.trim();
             if (!clau) return;
             error.textContent = '⏳ Verificant...';
             try {
-                const res = await fetch(`${CONFIG.BASE_WORKER}/login?p=${encodeURIComponent(clau)}`);
+                const res  = await fetch(`${CONFIG.BASE_WORKER}/login?p=${encodeURIComponent(clau)}`);
                 const text = await res.text();
                 if (text.trim() === 'OK') {
                     sessionStorage.setItem('admin_clau', clau);
@@ -512,9 +654,9 @@
         document.getElementById('login-input').addEventListener('keydown', (e) => {
             if (e.key === 'Enter') fer_login();
         });
-
         setTimeout(() => document.getElementById('login-input').focus(), 100);
     };
+
 
     // ─── MOSTRAR TAULA ───────────────────────────────────────
     const mostrarTaula = async () => {
@@ -529,9 +671,11 @@
 
         panel.innerHTML = `
             <div id="admin-barra">
+                <button id="btn-nou">＋ Nou plat</button>
                 <button id="btn-guardar">💾 Guardar</button>
                 <button id="btn-descartar">✕ Descartar</button>
                 <span id="admin-comptador"></span>
+                <button id="btn-recarregar">🔄 Forçar recàrrega</button>
             </div>
             <table>
                 <thead>
@@ -545,37 +689,77 @@
                         <th class="col-seccio">Secció</th>
                         <th class="col-check">Carta</th>
                         <th class="col-check">Vins</th>
+                        <th class="col-delete"></th>
                     </tr>
                 </thead>
                 <tbody id="admin-tbody"></tbody>
             </table>
+
+            <div id="modal-nou-plat">
+                <div class="modal-caixa">
+                    <h2>Nou plat</h2>
+                    <input type="text"   id="modal-nom"    placeholder="Nom del plat *">
+                    <input type="number" id="modal-preu"   placeholder="Preu (0.00)" step="0.01">
+                    <select id="modal-seccio">
+                        <option value="Entrants">Entrants</option>
+                        <option value="Primer">Primer</option>
+                        <option value="Segon">Segon</option>
+                        <option value="Postres">Postres</option>
+                        <option value="Vins">Vins</option>
+                        <option value="Peu">Peu</option>
+                    </select>
+                    <div class="modal-fila">
+                        <input type="checkbox" id="modal-visible" checked
+                            style="width:16px; height:16px; accent-color:#c8973a;">
+                        <label for="modal-visible"
+                            style="color:#aaa; font-size:12px; letter-spacing:1px;">
+                            Visible a la web
+                        </label>
+                    </div>
+                    <button id="modal-btn-crear" class="modal-boto-crear" disabled>CREAR PLAT</button>
+                    <button id="modal-btn-cancel" class="modal-boto-cancel">Cancel·lar</button>
+                </div>
+            </div>
         `;
 
+        // Events barra
+        document.getElementById('btn-nou').addEventListener('click', obrirModalNouPlat);
         document.getElementById('btn-guardar').addEventListener('click', () => {
             if (Object.keys(window.CANVIS_PENDENTS).length > 0) guardarTot();
         });
-
         document.getElementById('btn-descartar').addEventListener('click', () => {
             if (Object.keys(window.CANVIS_PENDENTS).length > 0) descartarCanvis();
         });
+        document.getElementById('btn-recarregar').addEventListener('click', async () => {
+            const estat = document.getElementById('admin-estat');
+            estat.textContent = '⏳ Recarregant...';
+            await fetch(`${CONFIG.BASE_WORKER}/reset-kv`, { method: 'POST' });
+            location.reload();
+        });
 
-        const res = await fetch(CONFIG.BASE_WORKER);
+        // Events modal
+        document.getElementById('modal-nom').addEventListener('input', nomInputHandler);
+        document.getElementById('modal-btn-crear').addEventListener('click', crearNouPlat);
+        document.getElementById('modal-btn-cancel').addEventListener('click', tancarModalNouPlat);
+
+        // Carregar registres
+        const res  = await fetch(CONFIG.BASE_WORKER);
         const data = await res.json();
-        registres = data;
+        registres  = data;
 
         const tbody = document.getElementById('admin-tbody');
         registres.forEach(r => tbody.appendChild(crearFila(r)));
-        tbody.prepend(crearFila({ fields: {}, id: null }, true));
 
         document.body.style.opacity = '1';
     };
+
 
     // ─── INICIALITZAR ────────────────────────────────────────
     const inicialitzar = async () => {
         const clau = sessionStorage.getItem('admin_clau');
         if (clau) {
             const resLogin = await fetch(`${CONFIG.BASE_WORKER}/login?p=${encodeURIComponent(clau)}`);
-            const text = await resLogin.text();
+            const text     = await resLogin.text();
             if (text.trim() === 'OK') {
                 mostrarTaula();
                 return;

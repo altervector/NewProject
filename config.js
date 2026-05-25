@@ -54,6 +54,8 @@ const CONFIG = {
     HORA_2:          "Divendres i dissabte nit: 08:00 – 24:00h",
     HORA_3:          "Diumenge: 09:00 - 23:00h",
 
+    RESERVES:        "Fes la teva Reserva",
+
 
     // 3. SEGURETAT (de moment buit, s'activa quan pujem a producció)
     SITIOS_SEGUROS:  ["altervector.com", "pages.dev", "altervector.github.io", "localhost", "127.0.0.1"],

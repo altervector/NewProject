@@ -150,13 +150,11 @@ logo.addEventListener('contextmenu', (e) => e.preventDefault());
                 <hr class="separador">
 
                 <section class="seccio" id="reserves">
-                    <h2 class="seccio-titol">Fes la teva Reserva</h2>
+                    <h2 class="seccio-titol">${CONFIG.RESERVES}</h2>
                     <p class="seccio-text">
                         <a href="tel:${CONFIG.TELEFON}">📞 ${CONFIG.TELEFON}</a>
                     </p>
-                    <p class="seccio-text">
-                        <a href="mailto:${CONFIG.EMAIL}">✉️ ${CONFIG.EMAIL}</a>
-                    </p>
+                   
                 </section>
 
                 <div style="text-align: center; margin: 20px 0; list-style: none;">
@@ -164,7 +162,9 @@ logo.addEventListener('contextmenu', (e) => e.preventDefault());
                 </div>
             `;
         }
-   
+    /*<p class="seccio-text">
+                        <a href="mailto:${CONFIG.EMAIL}">✉️ ${CONFIG.EMAIL}</a>
+                    </p>*/
         /* ─── 4. FOOTER ─────────────────────────────────────────── */
         const footer = document.getElementById('footer');
         if (footer) {

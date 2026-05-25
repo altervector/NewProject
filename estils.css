@@ -17,7 +17,7 @@
     --color-daurat:     #c8973a;
     --color-blanc:      #ffffff;
     --color-blau-fosc:      #1d0047;
-    --color-blau-transp:     rgba(3, 1, 51, 0.65);
+    --color-blau-transp:     rgba(3, 1, 51, 0.55);
             /*--color-fons:       #f8f5f0;*/
             /*--color-fons-alt:   #ffffff;*/
     
@@ -125,7 +125,7 @@ a:hover {
     top: 70px;
     left: 0;
     right: 0;
-    background: rgba(44, 62, 53, 0.95);
+    background:var(--color-blau-transp);
     padding: 20px;
     gap: 16px;
     z-index: 99;

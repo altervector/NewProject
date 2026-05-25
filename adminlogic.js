@@ -435,7 +435,9 @@
         const fila = document.createElement('tr');
         if (id) fila.setAttribute('data-id', id);
 
-        const seccions = ['Entrants', 'Primer', 'Segon', 'Postres', 'Vins', 'Peu'];
+        //const seccions = ['Entrants', 'Primer', 'Segon', 'Postres', 'Vins', 'Peu'];
+        //'Para picar', 'Combinados', 'Cocas', 'Hamburguesas', 'Fríos','Postres','Vins','Cocteles'
+        const seccions = ['Entrants', 'Primer', 'Segon','Para picar', 'Combinados', 'Cocas', 'Hamburguesas', 'Fríos', 'Postres', 'Vins','Cocteles', 'Peu'];
 
         const onBlurText = (camp, el) => {
             const valorOriginal = el.value;
@@ -552,6 +554,15 @@
         tdVins.className = 'col-check';
         tdVins.appendChild(cbVins);
 
+        // Cocteles
+        const cbCocteles = document.createElement('input');
+        cbCocteles.type    = 'checkbox';
+        cbCocteles.checked = f.Cocteles === true;
+        onChangeCheck('Cocteles', cbCocteles);
+        const tdCocteles = document.createElement('td');
+        tdCocteles.className = 'col-check';
+        tdCocteles.appendChild(cbCocteles);
+
         // Botó eliminar
         const btnDel = document.createElement('button');
         btnDel.className   = 'btn-delete';
@@ -584,6 +595,7 @@
         fila.appendChild(tdSeccio);
         fila.appendChild(tdCarta);
         fila.appendChild(tdVins);
+        fila.appendChild(tdCocteles);
         fila.appendChild(tdDelete);
 
         return fila;
@@ -689,6 +701,7 @@
                         <th class="col-seccio">Secció</th>
                         <th class="col-check">Carta</th>
                         <th class="col-check">Vins</th>
+                        <th class="col-check">Cocteles</th>
                         <th class="col-delete"></th>
                     </tr>
                 </thead>
@@ -704,8 +717,14 @@
                         <option value="Entrants">Entrants</option>
                         <option value="Primer">Primer</option>
                         <option value="Segon">Segon</option>
+                        <option value="Para picar">Para picar</option>
+                        <option value="Combinados">Combinados</option>
+                        <option value="Cocas">Cocas</option>
+                        <option value="Hamburguesas">Hamburguesas</option>
+                        <option value="Fríos">Fríos</option>
                         <option value="Postres">Postres</option>
                         <option value="Vins">Vins</option>
+                        <option value="Cocteles">Cocteles</option>
                         <option value="Peu">Peu</option>
                     </select>
                     <div class="modal-fila">

@@ -228,7 +228,7 @@
             }
         });
 
-        const ordreSeccions = ['Entrants', 'Primer', 'Segon', 'Postres', 'Vins'];
+        const ordreSeccions = ['Para picar', 'Combinados', 'Cocas', 'Hamburguesas', 'Fríos','Postres','Vins','Cocteles'];
         const seccionsOrdenades = ordreSeccions.filter(s => grups[s]);
 
         let html = `
@@ -340,5 +340,6 @@
     window.obrirModalMenuGrups = () => obrirModal('Menu_Grups', 'Menú de Grups');
     window.obrirModalCarta     = () => obrirModal('Carta',      'La Nostra Carta',     true);
     window.obrirModalVins      = () => obrirModal('Vins',       'Vins i Caves',        true);
+    window.obrirModalCocteles  = () => obrirModal('Cocteles',  'Cocteles',        true);
 
 })();

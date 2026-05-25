@@ -11,7 +11,7 @@ const CONFIG = {
     SLOGAN:         "Plaça Vella",
     TELEFON:        "93 788 72 91",
     MOBIL:          "625 52 52 79",
-    EMAIL:          "agora@altervector.com",
+    EMAIL:          "agora@altervector.com", /*agora26vella@gmail.com */
     ADRECA:         "Carrer de Jaume Cantarer, 4, 08221 Terrassa, Barcelona",
     INSTAGRAM:      "https://www.instagram.com/agoraplazavella",
     FACEBOOK:       "https://www.facebook.com/profile.php?id=100054618451503",
@@ -49,7 +49,7 @@ const CONFIG = {
     BLOC4_DESC:      "",
 
     QUI_SOM:         "Qui som...",
-    QUI_DESC:        "Escriu aquí la descripció del negocio. Qui sou, què oferiu, quina és la vostra filosofia.",
+    QUI_DESC:        "Nuestro local esta dedicado a los servicios de restauración. Ofreciendo cocina mediterránea y española, incluyendo desayunos, comidas, cenas y tapas, con opciones para comer en el local, en su terraza o para llevar. Les brindamos una comida de calidad, ambiente acogedor y servicio amable.",
 
     HORA_1:          "Dilluns a divendres: 08:00 – 23:00h",
     HORA_2:          "Divendres i dissabte nit: 08:00 – 24:00h",

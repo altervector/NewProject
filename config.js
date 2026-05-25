@@ -13,7 +13,7 @@ const CONFIG = {
     EMAIL:          "agora@altervector.com",
     ADRECA:         "Carrer de Jaume Cantarer, 4, 08221 Terrassa, Barcelona",
     INSTAGRAM:      "https://www.instagram.com/agoraplazavella",
-    FACEBOOK:       "https://www.facebook.com/",
+    FACEBOOK:       "https://www.facebook.com/profile.php?id=100054618451503",
     EMAIL_SUPORT:   "suport@altervector.com",
 
 

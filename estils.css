@@ -302,7 +302,7 @@ a:hover {
 
 /* ─── 7. FOOTER ───────────────────────────────────────────── */
 .footer {
-    background-color:var(--color-verd-fosc) ;
+    background-color:var(--color-blau-fosc) ;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     color: rgba(255,255,255,0.75);

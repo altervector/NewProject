@@ -153,6 +153,7 @@ logo.addEventListener('contextmenu', (e) => e.preventDefault());
                     <h2 class="seccio-titol">${CONFIG.RESERVES}</h2>
                     <p class="seccio-text">
                         <a href="tel:${CONFIG.TELEFON}">📞 ${CONFIG.TELEFON}</a>
+                        <a href="tel:${CONFIG.MOBIL}">📞 ${CONFIG.MOBIL}</a>
                     </p>
                    
                 </section>
@@ -177,6 +178,7 @@ logo.addEventListener('contextmenu', (e) => e.preventDefault());
                         </a>
                     </p>
                     <p><a href="tel:${CONFIG.TELEFON}">${CONFIG.TELEFON}</a></p>
+                    <a href="tel:${CONFIG.MOBIL}">${CONFIG.MOBIL}</a></p>
                     <a href="mailto:${CONFIG.EMAIL}">✉️ ${CONFIG.EMAIL}</a>
                     <p>
                         <a href="${CONFIG.INSTAGRAM}" target="_blank">Instagram</a>

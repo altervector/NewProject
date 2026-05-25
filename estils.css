@@ -17,6 +17,7 @@
     --color-daurat:     #c8973a;
     --color-blanc:      #ffffff;
     --color-blau-fosc:      #1d0047;
+    --color-verd-fosc:     rgba(44, 62, 53, 0.65);
             /*--color-fons:       #f8f5f0;*/
             /*--color-fons-alt:   #ffffff;*/
     
@@ -301,7 +302,7 @@ a:hover {
 
 /* ─── 7. FOOTER ───────────────────────────────────────────── */
 .footer {
-    background-color: rgba(44, 62, 53, 0.65);
+    background-color:var(--color-verd-fosc) ;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     color: rgba(255,255,255,0.75);

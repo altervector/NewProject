@@ -13,15 +13,16 @@
 }
 
 :root {
-    --color-principal:  #2c3e35;
-    --color-accent:     #c8973a;
-    --color-fons:       #f8f5f0;
-    --color-fons-alt:   #ffffff;
-    --color-text:       #1a1a1a;
-    --color-text-suau:  #ffffff;
+    --color-verd-oliva:  #2c3e35;
+    --color-daurat:     #c8973a;
     --color-blanc:      #ffffff;
+    --color-blau-fosc:      #1d0047;
+            /*--color-fons:       #f8f5f0;*/
+            /*--color-fons-alt:   #ffffff;*/
+    
+    
 
-    /*--font-titol:       'Georgia', serif;*/
+            /*--font-titol:       'Georgia', serif;*/
     --font-titol:       'Comfortaa', sans-serif;
     --font-cos:         'Segoe UI', Roboto, sans-serif;
 
@@ -139,7 +140,7 @@ a:hover {
 }
 
 .navbar-menu a:hover {
-    color: var(--color-accent);
+    color: var(--color-daurat);
     text-decoration: none;
 }
 
@@ -203,7 +204,7 @@ a:hover {
 
 .hero-boto {
     display: inline-block;
-    background: var(--color-accent);
+    background: var(--color-daurat);
     color: var(--color-blanc);
     padding: 12px 30px;
     border-radius: var(--radi);
@@ -215,7 +216,7 @@ a:hover {
 }
 
 .hero-boto:hover {
-    background: var(--color-principal);
+    background: var(--color-verd-oliva);
     text-decoration: none;
 }
 
@@ -234,15 +235,15 @@ a:hover {
 .seccio-titol {
     font-family: var(--font-titol);
     font-size: 1.5rem;
-    color: var(--color-principal);
+    color: var(--color-daurat);
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 2px solid var(--color-accent);
+    border-bottom: 2px solid var(--color-daurat);
 }
 
 .seccio-text {
     font-size: 15px;
-    color: var(--color-text-suau);
+    color: var(--color-blanc);
     line-height: 1.8;
     margin-bottom: 15px;
 }
@@ -281,13 +282,13 @@ a:hover {
 .menu-bloc-text h3 {
     font-family: var(--font-titol);
     font-size: 1.1rem;
-    color: var(--color-principal);
+    color: var(--color-daurat);
     margin-bottom: 6px;
 }
 
 .menu-bloc-text p {
     font-size: 14px;
-    color: var(--color-text-suau);
+    color: var(--color-blanc);
     line-height: 1.6;
 }
 
@@ -318,7 +319,7 @@ a:hover {
 }
 
 .footer a {
-    color: var(--color-accent);
+    color: var(--color-daurat);
 }
 
 .footer a:hover {
@@ -334,7 +335,7 @@ a:hover {
 }
 
 .footer-poweredby a {
-    color: var(--color-accent);
+    color: var(--color-daurat);
 }
 
 #visites:not(:empty)::before {

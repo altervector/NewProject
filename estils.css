@@ -13,11 +13,12 @@
 }
 
 :root {
-    --color-verd-oliva:  #2c3e35;
-    --color-daurat:     #c8973a;
-    --color-blanc:      #ffffff;
+    --color-verd-oliva:     #2c3e35;
+    --color-daurat:         #c8973a;
+    --color-blanc:          #ffffff;
+    --color-blanc-transp:   rgba(255, 255, 255, 0.586);
     --color-blau-fosc:      #1d0047;
-    --color-blau-transp:     rgba(3, 1, 51, 0.55);
+    --color-blau-transp:    rgba(3, 1, 51, 0.55);
             /*--color-fons:       #f8f5f0;*/
             /*--color-fons-alt:   #ffffff;*/
     
@@ -332,7 +333,7 @@ a:hover {
     font-size: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.3);
+    color: var(--color-blanc-transp);
 }
 
 .footer-poweredby a {
@@ -345,7 +346,7 @@ a:hover {
 
 #visites {
     font-size: 0.75rem;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 

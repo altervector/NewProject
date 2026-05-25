@@ -239,7 +239,7 @@ a:hover {
     color: var(--color-daurat);
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 2px solid var(--color-daurat);
+    border-bottom: 3px solid var(--color-blau-transp);
 }
 
 .seccio-text {

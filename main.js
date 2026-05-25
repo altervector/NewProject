@@ -154,7 +154,7 @@ logo.addEventListener('contextmenu', (e) => e.preventDefault());
                     <p class="seccio-text">
                         <a href="tel:${CONFIG.TELEFON}">📞 ${CONFIG.TELEFON}</a>
                         &nbsp;·&nbsp;
-                        <a href="tel:${CONFIG.MOBIL}">📞 ${CONFIG.MOBIL}</a>
+                        <a href="tel:${CONFIG.MOBIL}">📱 ${CONFIG.MOBIL}</a>
                     </p>
                    
                 </section>

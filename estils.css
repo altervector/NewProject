@@ -13,12 +13,14 @@
 }
 
 :root {
-    --color-verd-oliva:     #2c3e35;
-    --color-daurat:         #c8973a;
-    --color-blanc:          #ffffff;
-    --color-blanc-transp:   rgba(255, 255, 255, 0.586);
+    
+    /*  COLORS  */
+    --boto_hero_hover:      #2c3e35;   /*  VERD OLIVA  */
+    --color-daurat:         #c8973a;   /*NAV-menu a:hover||hero-boto||seccio-titol||menu-bloc-text h3||footer a||footer-poweredby a*/
+    --color-blanc:          #ffffff;   /*navbar-logo||navbar-menu a||hero-contingut||hero-boto||seccio-text||menu-bloc-text p||footer-nom||*/
+    --color-blanc-transp:   rgba(255, 255, 255, 0.586);  /*footer-poweredby*/
     --color-blau-fosc:      #1d0047;
-    --color-blau-transp:    rgba(3, 1, 51, 0.55);
+    --color-blau-transp:    rgba(3, 1, 51, 0.55);  /*navbar.scrolled||navbar-menu.obert||seccio-titol(border)||footer*/
             /*--color-fons:       #f8f5f0;*/
             /*--color-fons-alt:   #ffffff;*/
     
@@ -218,7 +220,7 @@ a:hover {
 }
 
 .hero-boto:hover {
-    background: var(--color-verd-oliva);
+    background: var(--boto_hero_hover);
     text-decoration: none;
 }
 

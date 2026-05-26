@@ -187,6 +187,11 @@ logo.addEventListener('contextmenu', (e) => e.preventDefault());
                         &nbsp;·&nbsp;
                         <a href="${CONFIG.FACEBOOK}" target="_blank">Facebook</a>
                     </p>
+                            <p class="footer-qr">
+                                <a href="${CONFIG.BASE_URL}${CONFIG.QR}">
+                                <img src="${CONFIG.BASE_URL}${CONFIG.QR}" alt="QR">
+                                </a>
+                            </p>
                     <p class="footer-poweredby">
                         Powered by <a href="https://www.altervector.com" target="_blank">AlterVector</a>
                         <span id="visites"></span>

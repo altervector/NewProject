@@ -330,6 +330,16 @@ a:hover {
     text-decoration: underline;
 }
 
+.footer-qr {
+    width: 55px;
+   margin: 20px auto 0 auto;
+}
+.footer-qr img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 .footer-poweredby {
     margin-top: 30px;
     font-size: 10px;

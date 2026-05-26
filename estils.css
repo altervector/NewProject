@@ -17,7 +17,7 @@
     /*  COLORS  */
     --boto_hero_hover:      #2c3e35;   /*  VERD OLIVA  */
     --color-daurat:         #c8973a;   /*NAV-menu a:hover||hero-boto||seccio-titol||menu-bloc-text h3||footer a||footer-poweredby a*/
-    --color-blanc:          #ffffff;   /*navbar-logo||navbar-menu a||hero-contingut||hero-boto||seccio-text||menu-bloc-text p||footer-nom||*/
+    --color-blanc:          #ffffff;   /*navbar-logo||navbar-hamburguesa||navbar-menu a||hero-contingut||hero-boto||seccio-text||menu-bloc-text p||footer-nom||*/
     --color-blanc-transp:   rgba(255, 255, 255, 0.586);  /*footer-poweredby*/
     --color-blau-fosc:      #1d0047;
     --color-blau-transp:    rgba(3, 1, 51, 0.55);  /*navbar.scrolled||navbar-menu.obert||seccio-titol(border)||footer*/
@@ -116,7 +116,7 @@ a:hover {
 .navbar-hamburguesa {
     background: none;
     border: none;
-    color: white;
+    color: var(--color-blanc);
     font-size: 24px;
     cursor: pointer;
 }
@@ -201,7 +201,7 @@ a:hover {
 
 .hero-slogan {
     font-size: 1rem;
-    color: rgba(255,255,255,0.85);
+    color: var(--color-blanc-transp);
     margin-bottom: 25px;
     font-style: italic;
 }

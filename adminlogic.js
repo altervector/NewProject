@@ -765,7 +765,7 @@
         const res  = await fetch(CONFIG.BASE_WORKER);
         const data = await res.json();
         registres  = data;
-
+        registres.sort((a, b) => (a.fields.Ordre || 0) - (b.fields.Ordre || 0));
         const tbody = document.getElementById('admin-tbody');
         registres.forEach(r => tbody.appendChild(crearFila(r)));
 

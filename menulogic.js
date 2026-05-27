@@ -167,9 +167,9 @@
         seccionsOrdenades.forEach(seccio => {
             html += `
                 <div style="margin-bottom:22px;">
-                    <h3 style="font-size:0.75rem; letter-spacing:3px; 
-                        text-transform:uppercase; color:#c8973a; 
-                        border-bottom:1px solid #ddd3be; padding-bottom:6px; 
+                    <h3 style="font-size:0.85rem; letter-spacing:3px; 
+                        text-transform:uppercase; color:var(--color-daurat); 
+                        border-bottom:1px solid #e3b450; padding-bottom:6px; 
                         margin-bottom:12px; font-family:sans-serif; font-weight:normal; text-align:center;">
                         ${seccio}
                     </h3>
@@ -248,9 +248,9 @@
         seccionsOrdenades.forEach(seccio => {
             html += `
                 <div style="margin-bottom:22px;">
-                    <h3 style="font-size:0.75rem; letter-spacing:3px; 
-                        text-transform:uppercase; color:#c8973a; 
-                        border-bottom:1px solid #ddd3be; padding-bottom:6px; 
+                    <h3 style="font-size:0.85rem; letter-spacing:3px; 
+                        text-transform:uppercase; color:var(--color-daurat); 
+                        border-bottom:1px solid #e3b450; padding-bottom:6px; 
                         margin-bottom:12px; font-family:sans-serif; font-weight:normal;">
                         ${seccio}
                     </h3>

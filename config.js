@@ -7,7 +7,7 @@ const CONFIG = {
 
     // 1. NEGOCI
     NOM:            "àgora",
-    LOGO:           "Icon/logoAGtrans.png",
+    LOGO:           "logo/logoAGtrans.png",
     SLOGAN:         "Plaça Vella",
     TELEFON:        "93 788 72 91",
     MOBIL:          "625 52 52 79",
@@ -23,15 +23,16 @@ const CONFIG = {
     BASE_URL:       "./",
     BASE_WORKER:    "https://agora.altervector.workers.dev",
     URL_OFICIAL:    "https://agora.altervector.com",
+    ASSETS:         "https://avsets.pages.dev/",
 
     // 2.2 RUTES Imatges
     //BACKGROUND:      "Canviar en el css del .html",
-    BLOC_HERO:       "images/hero-agora.png",
-    BLOC1:           "images/diari.png",
-    BLOC2:           "images/finde.png",
-    BLOC3:           "images/grups.png",
+    BLOC_HERO:       "images/agora/hero-agora.png",
+    BLOC1:           "images/agora/diari.png",
+    BLOC2:           "images/agora/finde.png",
+    BLOC3:           "images/agora/grups.png",
     BLOC4:           "",
-    QR:              "/qr/qr-àgora.png",
+    QR:              "qr/qr-àgora.png",
 
     // 2.3 RUTES Textos
     HERO_BOTO:       "Descobreix-nos",

@@ -14,7 +14,7 @@
             navbar.innerHTML = `
                 <nav class="navbar">
                     <div class="navbar-logo">
-                        <img src="${CONFIG.BASE_URL}${CONFIG.LOGO}" alt="${CONFIG.NOM}">
+                        <img src="${CONFIG.ASSETS}${CONFIG.LOGO}" alt="${CONFIG.NOM}">
                     </div> 
                        <button class="navbar-hamburguesa">☰</button>
                     
@@ -66,7 +66,7 @@ logo.addEventListener('contextmenu', (e) => e.preventDefault());
         if (hero) {
             hero.innerHTML = `
                 <section class="hero">
-                    <img class="hero-imatge" src="${CONFIG.BASE_URL}${CONFIG.BLOC_HERO}"
+                    <img class="hero-imatge" src="${CONFIG.ASSETS}${CONFIG.BLOC_HERO}"
                         alt="${CONFIG.NOM}">
                     <div class="hero-overlay"></div>
                     <div class="hero-contingut">
@@ -90,9 +90,9 @@ logo.addEventListener('contextmenu', (e) => e.preventDefault());
                         <div class="menu-bloc">
                             <a href="javascript:void(0)" onclick="obrirModalMenuDiari()">
                                 <div class="menu-bloc-imatge">
-                                    <img src="${CONFIG.BASE_URL}${CONFIG.BLOC1}"
+                                    <img src="${CONFIG.ASSETS}${CONFIG.BLOC1}"
                                         alt="Menú Diari"
-                                        onerror="this.src='${CONFIG.BASE_URL}${CONFIG.BLOC_HERO}'">
+                                        onerror="this.src='${CONFIG.ASSETS}${CONFIG.BLOC_HERO}'">
                                 </div>
                                 <div class="menu-bloc-text">
                                     <h3>${CONFIG.BLOC1_TITOL}</h3>
@@ -104,9 +104,9 @@ logo.addEventListener('contextmenu', (e) => e.preventDefault());
                         <div class="menu-bloc">
                             <a href="javascript:void(0)" onclick="obrirModalMenuCDS()">
                                 <div class="menu-bloc-imatge">
-                                    <img src="${CONFIG.BASE_URL}${CONFIG.BLOC2}"
+                                    <img src="${CONFIG.ASSETS}${CONFIG.BLOC2}"
                                         alt="Menú Cap de Setmana"
-                                        onerror="this.src='${CONFIG.BASE_URL}${CONFIG.BLOC_HERO}'">
+                                        onerror="this.src='${CONFIG.ASSETS}${CONFIG.BLOC_HERO}'">
                                 </div>
                                 <div class="menu-bloc-text">
                                     <h3>${CONFIG.BLOC2_TITOL}</h3>
@@ -118,9 +118,9 @@ logo.addEventListener('contextmenu', (e) => e.preventDefault());
                         <div class="menu-bloc">
                             <a href="javascript:void(0)" onclick="obrirModalMenuGrups()">
                                 <div class="menu-bloc-imatge">
-                                    <img src="${CONFIG.BASE_URL}${CONFIG.BLOC3}"
+                                    <img src="${CONFIG.ASSETS}${CONFIG.BLOC3}"
                                         alt="Menú Grups"
-                                        onerror="this.src='${CONFIG.BASE_URL}${CONFIG.BLOC_HERO}'">
+                                        onerror="this.src='${CONFIG.ASSETS}${CONFIG.BLOC_HERO}'">
                                 </div>
                                 <div class="menu-bloc-text">
                                     <h3>${CONFIG.BLOC3_TITOL}</h3>
@@ -188,8 +188,8 @@ logo.addEventListener('contextmenu', (e) => e.preventDefault());
                         <a href="${CONFIG.FACEBOOK}" target="_blank">Facebook</a>
                     </p>
                             <p class="footer-qr">
-                                <a href="${CONFIG.BASE_URL}${CONFIG.QR}">
-                                <img src="${CONFIG.BASE_URL}${CONFIG.QR}" alt="QR">
+                                <a href="${CONFIG.ASSETS}${CONFIG.QR}">
+                                <img src="${CONFIG.ASSETS}${CONFIG.QR}" alt="QR">
                                 </a>
                             </p>
                     <p class="footer-poweredby">

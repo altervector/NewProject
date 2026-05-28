@@ -591,7 +591,7 @@
         fila.appendChild(tdNom);
         fila.appendChild(tdPreu);
         fila.appendChild(tdDiari);
-        fila.appendChild(tdCDS);
+        
         fila.appendChild(tdGrups);
         fila.appendChild(tdSeccio);
         fila.appendChild(tdCarta);
@@ -723,8 +723,11 @@
                         <option value="Hamburguesas">Hamburguesas</option>
                         <option value="Fríos">Fríos</option>
                         <option value="Postres">Postres</option>
-                        <option value="Vins">Vins</option>                      
-                                                                         //////////////////////vINS
+                        <option value="Vins Blancs">Vins Blancs</option>
+                        <option value="Vins Negres">Vins Negres</option>
+                        <option value="Vins Rosats">Vins Rosats</option>
+                        <option value="Vins Escumosos">Vins Escumosos</option>                      
+                        
                         <option value="Cocteles">Cocteles</option>
                         <option value="Peu">Peu</option>
                     </select>

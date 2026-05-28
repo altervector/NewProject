@@ -354,6 +354,14 @@ a:hover {
     color: var(--color-daurat);
 }
 
+.icona-app {
+    width: 24px;            /* Mida de la icona (pots posar 20px o 30px segons gust) */
+    height: auto;           /* MantÃ© la proporciÃ³ */
+    vertical-align: middle; /* Alinear verticalment amb el text del costat */
+    margin-right: 8px;      /* Un petit espai de separaciÃ³ entre la icona i el text */
+    display: inline-block;  /* Assegura que es comporti bÃ© dins la lÃ­nia */
+}
+
 #visites:not(:empty)::before {
     content: " · ";
 }

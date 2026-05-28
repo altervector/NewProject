@@ -169,9 +169,11 @@ logo.addEventListener('contextmenu', (e) => e.preventDefault());
                     </p>
                     <p><a href="tel:${CONFIG.TELEFON}">${CONFIG.TELEFON}</a></p>
                     <a href="tel:${CONFIG.MOBIL}">${CONFIG.MOBIL}</a></p>
-                    <a href="mailto:${CONFIG.EMAIL}">✉️ ${CONFIG.EMAIL}</a>
+                    <a href="mailto:${CONFIG.EMAIL}"><img src="${CONFIG.ASSETS}icon/Icomail.png" alt="Instagram" class="icona-app"> ${CONFIG.EMAIL}</a>
                     <p>
-                        <a href="${CONFIG.INSTAGRAM}" target="_blank">Instagram</a>
+                        
+                        <a href="${CONFIG.INSTAGRAM}" target="_blank">
+                        <img src="${CONFIG.ASSETS}icon/Icoinsta.png" alt="Instagram" class="icona-app"> Instagram</a>
                        
                     </p>
                             <p class="footer-qr">

@@ -435,9 +435,9 @@
         const fila = document.createElement('tr');
         if (id) fila.setAttribute('data-id', id);
 
-        //const seccions = ['Entrants', 'Primer', 'Segon', 'Postres', 'Vins', 'Peu'];
+        //const seccions = ['Entrants', 'Primer', 'Segon', 'Postres', 'Vins Blancs','Vins Negres','Vins Rosats','Vins Escumosos', 'Peu'];
         //'Para picar', 'Combinados', 'Cocas', 'Hamburguesas', 'Fríos','Postres','Vins','Cocteles'
-        const seccions = ['Entrants', 'Primer', 'Segon','Para picar', 'Combinados', 'Cocas', 'Hamburguesas', 'Fríos', 'Postres', 'Vins','Cocteles', 'Peu'];
+        const seccions = ['Entrants', 'Primer', 'Segon','Para picar', 'Combinados', 'Cocas', 'Hamburguesas', 'Fríos', 'Postres', 'Vins Blancs','Vins Negres','Vins Rosats','Vins Escumosos','Cocteles', 'Peu'];
 
         const onBlurText = (camp, el) => {
             const valorOriginal = el.value;
@@ -553,6 +553,7 @@
         const tdVins = document.createElement('td');
         tdVins.className = 'col-check';
         tdVins.appendChild(cbVins);
+        ///////////////////////////////////////////////////////////////Duplicar per vins
 
         // Cocteles
         const cbCocteles = document.createElement('input');
@@ -594,7 +595,11 @@
         fila.appendChild(tdGrups);
         fila.appendChild(tdSeccio);
         fila.appendChild(tdCarta);
-        fila.appendChild(tdVins);
+        fila.appendChild(tdVins Blancs);
+        fila.appendChild(tdVins Negres);
+        fila.appendChild(tdVins Rosats);
+        fila.appendChild(tdVins Escumosos);
+
         fila.appendChild(tdCocteles);
         fila.appendChild(tdDelete);
 
@@ -700,7 +705,10 @@
                         <th class="col-check">Grups</th>
                         <th class="col-seccio">Secció</th>
                         <th class="col-check">Carta</th>
-                        <th class="col-check">Vins</th>
+                        <th class="col-check">Vins Blancs</th>
+                        <th class="col-check">Vins Negres</th>
+                        <th class="col-check">Vins Rosats</th>
+                        <th class="col-check">Vins Escumosos</th>
                         <th class="col-check">Cocteles</th>
                         <th class="col-delete"></th>
                     </tr>
@@ -723,7 +731,8 @@
                         <option value="Hamburguesas">Hamburguesas</option>
                         <option value="Fríos">Fríos</option>
                         <option value="Postres">Postres</option>
-                        <option value="Vins">Vins</option>
+                        <option value="Vins">Vins</option>                      
+                                                                         //////////////////////
                         <option value="Cocteles">Cocteles</option>
                         <option value="Peu">Peu</option>
                     </select>

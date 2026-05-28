@@ -505,14 +505,14 @@
         tdDiari.className = 'col-check';
         tdDiari.appendChild(cbDiari);
 
-        // Menu_CDS
+        /* Menu_CDS
         const cbCDS = document.createElement('input');
         cbCDS.type    = 'checkbox';
         cbCDS.checked = f.Menu_CDS === true;
         onChangeCheck('Menu_CDS', cbCDS);
         const tdCDS = document.createElement('td');
         tdCDS.className = 'col-check';
-        tdCDS.appendChild(cbCDS);
+        tdCDS.appendChild(cbCDS);*/
 
         // Menu_Grups
         const cbGrups = document.createElement('input');
@@ -697,14 +697,10 @@
                         <th class="col-nom">Nom</th>
                         <th class="col-preu">Preu</th>
                         <th class="col-check">Diari</th>
-                        <th class="col-check">CDS</th>
                         <th class="col-check">Grups</th>
                         <th class="col-seccio">Secció</th>
                         <th class="col-check">Carta</th>
-                        <th class="col-check">Vins Blancs</th>
-                        <th class="col-check">Vins Negres</th>
-                        <th class="col-check">Vins Rosats</th>
-                        <th class="col-check">Vins Escumosos</th>
+                        <th class="col-check">Vins</th>
                         <th class="col-check">Cocteles</th>
                         <th class="col-delete"></th>
                     </tr>
@@ -728,7 +724,7 @@
                         <option value="Fríos">Fríos</option>
                         <option value="Postres">Postres</option>
                         <option value="Vins">Vins</option>                      
-                                                                         //////////////////////
+                                                                         //////////////////////vINS
                         <option value="Cocteles">Cocteles</option>
                         <option value="Peu">Peu</option>
                     </select>

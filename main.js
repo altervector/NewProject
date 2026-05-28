@@ -172,8 +172,7 @@ logo.addEventListener('contextmenu', (e) => e.preventDefault());
                     <a href="mailto:${CONFIG.EMAIL}">✉️ ${CONFIG.EMAIL}</a>
                     <p>
                         <a href="${CONFIG.INSTAGRAM}" target="_blank">Instagram</a>
-                        &nbsp;·&nbsp;
-                        <a href="${CONFIG.FACEBOOK}" target="_blank">Facebook</a>
+                       
                     </p>
                             <p class="footer-qr">
                                 <a href="${CONFIG.ASSETS}${CONFIG.QR}">

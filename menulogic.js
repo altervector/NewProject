@@ -228,7 +228,7 @@
             }
         });
 
-        const ordreSeccions = ['Para picar', 'Combinados', 'Cocas', 'Hamburguesas', 'Fríos','Postres','Vins','Cocteles'];
+        const ordreSeccions = ['Para picar', 'Combinados', 'Cocas', 'Hamburguesas', 'Fríos','Postres','Cocteles'];
         const seccionsOrdenades = ordreSeccions.filter(s => grups[s]);
 
         let html = `

@@ -595,11 +595,7 @@
         fila.appendChild(tdGrups);
         fila.appendChild(tdSeccio);
         fila.appendChild(tdCarta);
-        fila.appendChild(tdVinsBlancs);
-        fila.appendChild(tdVinsNegres);
-        fila.appendChild(tdVinsRosats);
-        fila.appendChild(tdVinsEscumosos);
-
+        fila.appendChild(tdVins);
         fila.appendChild(tdCocteles);
         fila.appendChild(tdDelete);
 

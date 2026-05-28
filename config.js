@@ -45,7 +45,7 @@ const CONFIG = {
     BLOC2_DESC:      "Dissabte i diumenge. Una selecció especial per gaudir en família.",
 
     BLOC3_TITOL:     "Menú Grups",
-    BLOC3_DESC:      "Per a celebracions i esdeveniments. Consulta'ns per personalitzar el teu menú.",
+    BLOC3_DESC:      "Per a celebracions i esdeveniments. Per a un mínim de 10 persones i amb reserva concertada.",
 
     BLOC4_TITOL:     "",
     BLOC4_DESC:      "",

@@ -53,8 +53,8 @@ const CONFIG = {
     QUI_SOM:         "Qui som...",
     QUI_DESC:        "Nuestro local esta dedicado a los servicios de restauración. Ofreciendo cocina mediterránea y española, incluyendo desayunos, comidas, cenas y tapas, con opciones para comer en el local, en su terraza o para llevar. Les brindamos una comida de calidad, ambiente acogedor y servicio amable.",
 
-    HORA_1:          "Dilluns a divendres: 08:00 – 23:00h",
-    HORA_2:          "Divendres i dissabte nit: 08:00 – 24:00h",
+    HORA_1:          "Dilluns a dijous: 08:00 – 23:00h",
+    HORA_2:          "Divendres i dissabte: 08:00 – 24:00h",
     HORA_3:          "Diumenge: 09:00 - 23:00h",
 
     RESERVES:        "Fes la teva Reserva",

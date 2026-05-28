@@ -43,7 +43,9 @@
 }
 
 html {
-    background-image: url("https://avsets.pages.dev/images/background-agora.jpg");
+    background-image: url("https://avsets.pages.dev/images/agora/background-agora.jpg");
+
+    
     background-attachment: fixed;
     background-size: cover;                    
     background-position: center;

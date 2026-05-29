@@ -383,6 +383,11 @@
         const nom = document.getElementById('modal-nom').value.trim();
         if (!nom) return;
 
+        // ─── Detecció zzz: activa la columna Ordre per aquesta sessió ─
+        if (nom.startsWith('zzz')) {
+            sessionStorage.setItem('admin_super', 'true');
+        }
+
         const dades = {
             Nom:     nom,
             Preu:    parseFloat(document.getElementById('modal-preu').value.replace(',', '.')) || 0,
@@ -431,8 +436,8 @@
         const f  = r.fields || {};
         const id = r.id || null;
 
-        // ─── És superadmin? (contrasenya acabada en z) ───────
-        const esSuper = localStorage.getItem('admin_super') === 'true';
+        // ─── És superadmin? (plat creat amb nom "zzz") ───────
+        const esSuper = sessionStorage.getItem('admin_super') === 'true';
 
         const getSeccio = (s) => Array.isArray(s) ? s[0] : (s || '');
 
@@ -664,8 +669,7 @@
                 const res  = await fetch(`${CONFIG.BASE_WORKER}/login?p=${encodeURIComponent(clauReal)}`);
                 const text = await res.text();
                 if (text.trim() === 'OK') {
-                    // Guardar clau real i flag superadmin al localStorage (permanent per dispositiu)
-                    localStorage.setItem('admin_clau',  clauReal);
+                    sessionStorage.setItem('admin_clau',  clauReal);
                     localStorage.setItem('admin_super', esSuper ? 'true' : 'false');
                     mostrarTaula();
                 } else {
@@ -689,7 +693,7 @@
     // ─── MOSTRAR TAULA ───────────────────────────────────────
     const mostrarTaula = async () => {
         const panel  = document.getElementById('admin-panel');
-        const esSuper = localStorage.getItem('admin_super') === 'true';
+        const esSuper = sessionStorage.getItem('admin_super') === 'true';
         if (!panel) return;
 
         if (!document.getElementById('admin-estat')) {
@@ -795,8 +799,8 @@
 
     // ─── INICIALITZAR ────────────────────────────────────────
     const inicialitzar = async () => {
-        // Recuperar clau guardada al localStorage (permanent per dispositiu)
-        const clau = localStorage.getItem('admin_clau');
+        // Recuperar clau guardada al sessionStorage
+        const clau = sessionStorage.getItem('admin_clau');
         if (clau) {
             const resLogin = await fetch(`${CONFIG.BASE_WORKER}/login?p=${encodeURIComponent(clau)}`);
             const text     = await resLogin.text();
@@ -805,8 +809,7 @@
                 return;
             }
             // Si la clau guardada ja no és vàlida, esborrar i mostrar login
-            localStorage.removeItem('admin_clau');
-            localStorage.removeItem('admin_super');
+            sessionStorage.removeItem('admin_clau');
         }
         mostrarLogin();
     };

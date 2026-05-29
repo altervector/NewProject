@@ -488,6 +488,10 @@
         tdNom.className = 'col-nom';
         tdNom.appendChild(inputNom);
 
+        // ─── Color de secció (del diccionari CONFIG.COLORS_SECCIONS) ─
+        const colorSeccio = (CONFIG.COLORS_SECCIONS && CONFIG.COLORS_SECCIONS[getSeccio(f.Seccio)]) || '#eee';
+        inputNom.style.color = colorSeccio;
+
         // Ordre (només visible si esSuper)
         const inputOrdre = document.createElement('input');
         inputOrdre.type  = 'number';
@@ -536,6 +540,7 @@
             sel.appendChild(opt);
         });
         onChangeSel('Seccio', sel);
+        sel.style.color = colorSeccio;
         const tdSeccio = document.createElement('td');
         tdSeccio.className = 'col-seccio';
         tdSeccio.appendChild(sel);

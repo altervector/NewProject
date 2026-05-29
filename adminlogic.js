@@ -88,6 +88,7 @@
 
         .col-nom    { min-width: 160px; }
         .col-preu   { width: 70px; }
+        .col-ordre  { width: 55px; }
         .col-check  { width: 80px; text-align: center; }
         .col-seccio { width: 110px; }
         .col-delete { width: 40px; text-align: center; }
@@ -430,13 +431,14 @@
         const f  = r.fields || {};
         const id = r.id || null;
 
+        // ─── És superadmin? (contrasenya acabada en z) ───────
+        const esSuper = localStorage.getItem('admin_super') === 'true';
+
         const getSeccio = (s) => Array.isArray(s) ? s[0] : (s || '');
 
         const fila = document.createElement('tr');
         if (id) fila.setAttribute('data-id', id);
 
-        //const seccions = ['Entrants', 'Primer', 'Segon', 'Postres', 'Vins Blancs','Vins Negres','Vins Rosats','Vins Escumosos', 'Peu'];
-        //'Para picar', 'Combinados', 'Cocas', 'Hamburguesas', 'Fríos','Postres','Vins','Cocteles'
         const seccions = ['Entrants', 'Primer', 'Segon','Para picar', 'Combinados', 'Cocas', 'Hamburguesas', 'Fríos', 'Postres', 'Vins Blancs','Vins Negres','Vins Rosats','Vins Escumosos','Cocteles', 'Peu'];
 
         const onBlurText = (camp, el) => {
@@ -486,6 +488,17 @@
         tdNom.className = 'col-nom';
         tdNom.appendChild(inputNom);
 
+        // Ordre (només visible si esSuper)
+        const inputOrdre = document.createElement('input');
+        inputOrdre.type  = 'number';
+        inputOrdre.step  = '1';
+        inputOrdre.value = f.Ordre || 0;
+        onBlurNum('Ordre', inputOrdre);
+        const tdOrdre = document.createElement('td');
+        tdOrdre.className = 'col-ordre';
+        if (!esSuper) tdOrdre.style.display = 'none';
+        tdOrdre.appendChild(inputOrdre);
+
         // Preu
         const inputPreu = document.createElement('input');
         inputPreu.type  = 'number';
@@ -504,15 +517,6 @@
         const tdDiari = document.createElement('td');
         tdDiari.className = 'col-check';
         tdDiari.appendChild(cbDiari);
-
-        /* Menu_CDS
-        const cbCDS = document.createElement('input');
-        cbCDS.type    = 'checkbox';
-        cbCDS.checked = f.Menu_CDS === true;
-        onChangeCheck('Menu_CDS', cbCDS);
-        const tdCDS = document.createElement('td');
-        tdCDS.className = 'col-check';
-        tdCDS.appendChild(cbCDS);*/
 
         // Menu_Grups
         const cbGrups = document.createElement('input');
@@ -553,7 +557,6 @@
         const tdVins = document.createElement('td');
         tdVins.className = 'col-check';
         tdVins.appendChild(cbVins);
-        ///////////////////////////////////////////////////////////////Duplicar per vins
 
         // Cocteles
         const cbCocteles = document.createElement('input');
@@ -589,9 +592,9 @@
 
         fila.appendChild(tdVisible);
         fila.appendChild(tdNom);
+        fila.appendChild(tdOrdre);
         fila.appendChild(tdPreu);
         fila.appendChild(tdDiari);
-        
         fila.appendChild(tdGrups);
         fila.appendChild(tdSeccio);
         fila.appendChild(tdCarta);
@@ -644,14 +647,21 @@
         const fer_login = async () => {
             const input = document.getElementById('login-input');
             const error = document.getElementById('login-error');
-            const clau  = input.value.trim();
-            if (!clau) return;
+            const clauEscrita = input.value.trim();
+            if (!clauEscrita) return;
+
+            // ─── Detecció z final (mode superadmin) ──────────
+            const esSuper  = clauEscrita.endsWith('z');
+            const clauReal = esSuper ? clauEscrita.slice(0, -1) : clauEscrita;
+
             error.textContent = '⏳ Verificant...';
             try {
-                const res  = await fetch(`${CONFIG.BASE_WORKER}/login?p=${encodeURIComponent(clau)}`);
+                const res  = await fetch(`${CONFIG.BASE_WORKER}/login?p=${encodeURIComponent(clauReal)}`);
                 const text = await res.text();
                 if (text.trim() === 'OK') {
-                    sessionStorage.setItem('admin_clau', clau);
+                    // Guardar clau real i flag superadmin al localStorage (permanent per dispositiu)
+                    localStorage.setItem('admin_clau',  clauReal);
+                    localStorage.setItem('admin_super', esSuper ? 'true' : 'false');
                     mostrarTaula();
                 } else {
                     error.textContent = '❌ Clau incorrecta';
@@ -673,7 +683,8 @@
 
     // ─── MOSTRAR TAULA ───────────────────────────────────────
     const mostrarTaula = async () => {
-        const panel = document.getElementById('admin-panel');
+        const panel  = document.getElementById('admin-panel');
+        const esSuper = localStorage.getItem('admin_super') === 'true';
         if (!panel) return;
 
         if (!document.getElementById('admin-estat')) {
@@ -695,6 +706,7 @@
                     <tr>
                         <th class="col-check">Visible</th>
                         <th class="col-nom">Nom</th>
+                        <th class="col-ordre" ${!esSuper ? 'style="display:none"' : ''}>Ordre</th>
                         <th class="col-preu">Preu</th>
                         <th class="col-check">Diari</th>
                         <th class="col-check">Grups</th>
@@ -726,8 +738,7 @@
                         <option value="Vins Blancs">Vins Blancs</option>
                         <option value="Vins Negres">Vins Negres</option>
                         <option value="Vins Rosats">Vins Rosats</option>
-                        <option value="Vins Escumosos">Vins Escumosos</option>                      
-                        
+                        <option value="Vins Escumosos">Vins Escumosos</option>
                         <option value="Cocteles">Cocteles</option>
                         <option value="Peu">Peu</option>
                     </select>
@@ -779,7 +790,8 @@
 
     // ─── INICIALITZAR ────────────────────────────────────────
     const inicialitzar = async () => {
-        const clau = sessionStorage.getItem('admin_clau');
+        // Recuperar clau guardada al localStorage (permanent per dispositiu)
+        const clau = localStorage.getItem('admin_clau');
         if (clau) {
             const resLogin = await fetch(`${CONFIG.BASE_WORKER}/login?p=${encodeURIComponent(clau)}`);
             const text     = await resLogin.text();
@@ -787,6 +799,9 @@
                 mostrarTaula();
                 return;
             }
+            // Si la clau guardada ja no és vàlida, esborrar i mostrar login
+            localStorage.removeItem('admin_clau');
+            localStorage.removeItem('admin_super');
         }
         mostrarLogin();
     };

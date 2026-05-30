@@ -257,7 +257,11 @@
                         text-transform:uppercase; color:var(--color-daurat); 
                         border-bottom:1px solid #e3b450; padding-bottom:6px; 
                         margin-bottom:12px; font-family:sans-serif; font-weight:normal;">
-                        ${seccio === 'Cocteles' ? 'Còctels' : seccio}
+                        ${seccio === 'Cocteles' ? 'Còctels' :
+                            seccio === 'Para picar' ? 'Per Picar' :
+                            seccio === 'Combinados' ? 'Combinats' :
+                            seccio === 'Fríos' ? 'Freds' :
+                            seccio}
                     </h3>
             `;
 

@@ -177,9 +177,7 @@ logo.addEventListener('contextmenu', (e) => e.preventDefault());
                        
                         <p>
                             <a href="https://search.google.com/local/writereview?placeid=ChIJGU4gT-qSpBIRLvqRcvS-P7E&source=g.page.m.ia._&laa=nmx-review-solicitation-ia2" target="_blank">
-                                <img src="${CONFIG.ASSETS}icon/google.png" alt="Google" class="icona-app">
-                                Ressenya a Google
-                            </a>
+                                <img src="${CONFIG.ASSETS}icon/google.png" alt="Google" class="icona-app">Google</a>
                         </p>
 
 

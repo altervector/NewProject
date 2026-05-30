@@ -75,8 +75,8 @@ const CONFIG = {
         "Segon":          "#FFB74D", // Turquesa brillant
         "Para picar":     "#1DE9B6", // Taronja pastís clar
         "Combinados":     "#FF6E40", // Taronja corall elèctric
-        "Cocas":          "#e05df7", // Violeta neó
-        "Hamburguesas":   "#ed296a", // Rosa fúcsia brillant
+        "Cocas":          "#ed8efd", // Violeta neó
+        "Hamburguesas":   "#ff2c73", // Rosa fúcsia brillant
         "Fríos":          "#A7FFEB", // Aquamarina molt clar
         "Postres":        "#e5d436", // Grog llimona (destaca moltíssim)
         "Vins Blancs":    "#d2ff9e", // Verd llima clar

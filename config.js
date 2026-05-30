@@ -74,7 +74,6 @@ const CONFIG = {
         "Primer":         "#00aeff", // Blau cel elèctric
         "Segon":          "#FFB74D", // Turquesa brillant
         "Para picar":     "#1DE9B6", // Taronja pastís clar
-        
         "Cocas":          "#ed8efd", // Violeta neó
         "Hamburguesas":   "#A7FFEB",// Rosa fúcsia brillant
         "Fríos":          "#ff2c73", // Aquamarina molt clar

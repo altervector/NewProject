@@ -51,7 +51,7 @@ const CONFIG = {
     BLOC4_DESC:      "",
 
     QUI_SOM:         "Qui som...",
-    QUI_DESC:        "Nuestro local esta dedicado a los servicios de restauración. Ofreciendo cocina mediterránea y española, incluyendo desayunos, comidas, cenas y tapas, con opciones para comer en el local, en su terraza o para llevar. Les brindamos una comida de calidad, ambiente acogedor y servicio amable.",
+    QUI_DESC:        "El nostre local està dedicat als serveis de restauració. Oferim cuina mediterrània i espanyola, incloent esmorzars, dinars, sopars i tapes, amb opcions per menjar al local, a la terrassa o per emportar. Us brindem un menjar de qualitat, ambient acollidor i servei amable.",
 
     HORA_1:          "Dilluns a dijous: 08:00 – 23:00h",
     HORA_2:          "Divendres i dissabte: 08:00 – 24:00h",

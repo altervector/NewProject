@@ -70,8 +70,8 @@ const CONFIG = {
 
         // 2. COLORS DE L'ADMINISTRADOR (Optimitzats per a fons fosc/negre)
     COLORS_SECCIONS: {
-        "Entrants":       "#07ff87", // Verd neó clar
-        "Primer":         "#40C4FF", // Blau cel elèctric
+        "Entrants":       "#00fe83", // Verd neó clar
+        "Primer":         "#00aeff", // Blau cel elèctric
         "Segon":          "#1DE9B6", // Turquesa brillant
         "Para picar":     "#FFB74D", // Taronja pastís clar
         "Combinados":     "#FF6E40", // Taronja corall elèctric
@@ -79,8 +79,8 @@ const CONFIG = {
         "Hamburguesas":   "#ed296a", // Rosa fúcsia brillant
         "Fríos":          "#A7FFEB", // Aquamarina molt clar
         "Postres":        "#e5d436", // Grog llimona (destaca moltíssim)
-        "Vins Blancs":    "#CCFF90", // Verd llima clar
-        "Vins Negres":    "#B388FF", // Espígol / lila clar (no es perd amb el fons)
+        "Vins Blancs":    "#d2ff9e", // Verd llima clar
+        "Vins Negres":    "#ba92ff", // Espígol / lila clar (no es perd amb el fons)
         "Vins Rosats":    "#ff357c", // Rosa pastís clar
         "Vins Escumosos": "#80DEEA", // Blau cian clar
         "Cocteles":       "#FFFF00", // Grog pur elèctric

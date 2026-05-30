@@ -384,7 +384,7 @@
         if (!nom) return;
 
         // ─── Detecció zzz: activa la columna Ordre i cancel·la la creació ─
-        if (nom.startsWith('zzz')) {
+        if (nom.toLowerCase().startsWith('zzz')) {
             sessionStorage.setItem('admin_super', 'true');
             tancarModalNouPlat();
             location.reload();

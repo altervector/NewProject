@@ -175,6 +175,14 @@ logo.addEventListener('contextmenu', (e) => e.preventDefault());
                         <a href="${CONFIG.INSTAGRAM}" target="_blank">
                         <img src="${CONFIG.ASSETS}icon/Icoinsta.png" alt="Instagram" class="icona-app"> Instagram</a>
                        
+                        <p>
+                            <a href="https://search.google.com/local/writereview?placeid=ChIJGU4gT-qSpBIRLvqRcvS-P7E&source=g.page.m.ia._&laa=nmx-review-solicitation-ia2" target="_blank">
+                                <img src="${CONFIG.ASSETS}icon/google.png" alt="Google" class="icona-app">
+                                Ressenya a Google
+                            </a>
+                        </p>
+
+
                     </p>
                             <p class="footer-qr">
                                 <a href="${CONFIG.ASSETS}${CONFIG.QR}">

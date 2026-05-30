@@ -9,7 +9,7 @@
     "orientation": "any",
     "icons": [
         {
-            "src": "Icon/logoAGtrans.png",
+            "src": "icon/logoAGtrans.png",
             "sizes": "any",
             "type": "image/png"
         }

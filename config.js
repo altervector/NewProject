@@ -72,8 +72,8 @@ const CONFIG = {
     COLORS_SECCIONS: {
         "Entrants":       "#00fe83", // Verd neó clar
         "Primer":         "#00aeff", // Blau cel elèctric
-        "Segon":          "#1DE9B6", // Turquesa brillant
-        "Para picar":     "#FFB74D", // Taronja pastís clar
+        "Segon":          "#FFB74D", // Turquesa brillant
+        "Para picar":     "#1DE9B6", // Taronja pastís clar
         "Combinados":     "#FF6E40", // Taronja corall elèctric
         "Cocas":          "#e05df7", // Violeta neó
         "Hamburguesas":   "#ed296a", // Rosa fúcsia brillant

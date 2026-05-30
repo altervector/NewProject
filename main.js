@@ -22,7 +22,7 @@
                         <li><a href="#menus">Menús</a></li>
                         <li><a href="javascript:void(0)" onclick="obrirModalCarta()">Carta</a></li>
                         <li><a href="javascript:void(0)" onclick="obrirModalVins()">Vins i Caves</a></li>
-                        <li><a href="javascript:void(0)" onclick="obrirModalCocteles()">Cócteles</a></li>
+                        <li><a href="javascript:void(0)" onclick="obrirModalCocteles()">Còctels</a></li>
                         <li><a href="#reserves">Reserves</a></li>
                     </ul>
                 </nav>

@@ -9,7 +9,7 @@
     "orientation": "any",
     "icons": [
         {
-            "src": "icon/logoAGtrans.png",
+            "src": "https://avsets.pages.dev/logo/logoAG.png",
             "sizes": "any",
             "type": "image/png"
         }

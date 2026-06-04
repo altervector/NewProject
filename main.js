@@ -315,7 +315,7 @@
                     <h2>Avís del Sistema</h2>
                     <p>S'ha acabat el període de prova d'aquest catàleg digital.</p>
                     <div style="margin-top: 35px;">
-                        <a href="mailto:${CONFIG.EMAIL_SUPORT}" style="background: #d35400; color: white; padding: 14px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">Renovar Servei</a>
+                        <a href="javascript:history.back()" style="background: #d35400; color: white; padding: 14px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">Tornar enrere</a>
                     </div>
                 </div>`; // el disseny de la capa
                     document.body.appendChild(capa);

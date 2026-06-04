@@ -294,7 +294,29 @@
                 if (new Date() > new Date(data)) {
                     const capa = document.createElement('div');
                     capa.id = 'capa-bloqueig';
-                    capa.innerHTML = `...`; // el disseny de la capa
+                    capa.innerHTML = ` <style>
+                    #capa-bloqueig-net {
+                        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                        background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(2px);
+                        -webkit-backdrop-filter: blur(2px); z-index: 100000; 
+                        display: flex; align-items: center; justify-content: center; padding: 20px;
+                    }
+                  .caixa-neta-glass {
+                        background: rgba(255, 240, 220, 0.75); backdrop-filter: blur(15px);
+                        -webkit-backdrop-filter: blur(15px); padding: 50px; border-radius: 20px; text-align: center;
+                        max-width: 420px; width: 100%; box-shadow: 0 15px 45px rgba(211, 84, 0, 0.15);
+                        border: 1px solid rgba(211, 84, 0, 0.2); font-family: sans-serif;
+                    }
+                  .caixa-neta-glass h2 { color: #d35400; margin-top: 0; font-size: 1.7rem; font-weight: 800; }
+                  .caixa-neta-glass p { color: #333; line-height: 1.6; font-size: 1.05rem; }
+                </style>
+                <div class="caixa-neta-glass">
+                    <h2>Avís del Sistema</h2>
+                    <p>S'ha acabat el període de prova d'aquest catàleg digital.</p>
+                    <div style="margin-top: 35px;">
+                        <a href="mailto:${CONFIG.EMAIL_SUPORT}" style="background: #d35400; color: white; padding: 14px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">Renovar Servei</a>
+                    </div>
+                </div>`; // el disseny de la capa
                     document.body.appendChild(capa);
                 }
             } catch(e) {}

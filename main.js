@@ -286,7 +286,21 @@
             })
             .catch(() => {}); // Si el Worker no respon → no passa res, el span queda buit
 
-    }; // fi inicialitzar
+    
+                // ─── CADUCITAT ───────────────────────────────────────
+            try {
+                const res = await fetch(`${CONFIG.BASE_WORKER}/caducitat`);
+                const data = await res.text();
+                if (new Date() > new Date(data)) {
+                    const capa = document.createElement('div');
+                    capa.id = 'capa-bloqueig';
+                    capa.innerHTML = `...`; // el disseny de la capa
+                    document.body.appendChild(capa);
+                }
+            } catch(e) {}
+    
+    
+        }; // fi inicialitzar
 
 
     /* ════════════════════════════════════════════════════════

@@ -216,7 +216,7 @@
                 <footer class="footer">
                     <p class="footer-nom">${CONFIG.NOM}</p>
                     <p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Agora+Plaza+Vella" target="_blank">
+                        <a href="${CONFIG.URL_MAPS}" target="_blank">
                             ${CONFIG.ADRECA}
                         </a>
                     </p>
@@ -228,7 +228,7 @@
                             <img src="${CONFIG.ASSETS}icon/Icoinsta.png" alt="Instagram" class="icona-app"> Instagram
                         </a>
                         <p>
-                            <a href="https://search.google.com/local/writereview?placeid=ChIJGU4gT-qSpBIRLvqRcvS-P7E&source=g.page.m.ia._&laa=nmx-review-solicitation-ia2" target="_blank">
+                            <a href="${CONFIG.URL_RESSENYES}}" target="_blank">
                                 <img src="${CONFIG.ASSETS}icon/google.png" alt="Google" class="icona-app">Google
                             </a>
                         </p>

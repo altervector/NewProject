@@ -24,9 +24,11 @@ const CONFIG = {
     BASE_WORKER:    "https://agora.altervector.workers.dev",
     URL_OFICIAL:    "https://agora.altervector.com",
     ASSETS:         "https://avsets.pages.dev/",
+    URL_MAPS:       "https://www.google.com/maps/search/?api=1&query=Agora+Plaza+Vella",
+    URL_RESSENYES:  "https://search.google.com/local/writereview?placeid=ChIJGU4gT-qSpBIRLvqRcvS-P7E&source=g.page.m.ia._&laa=nmx-review-solicitation-ia2",
 
     // 2.2 RUTES Imatges
-    //BACKGROUND:      "Canviar en el css del .html",
+    //BACKGROUND:      "Canviar en el css el .html",
     BLOC_HERO:       "images/agora/hero-agora.png",
     BLOC1:           "images/agora/diari.png",
     BLOC2:           "images/agora/finde.png",

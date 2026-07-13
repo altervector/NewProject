@@ -50,6 +50,7 @@ html {
     background-size: cover;                    
     background-position: center;
     min-height: 100%;
+    scroll-behavior: smooth;
 }
 
 body {

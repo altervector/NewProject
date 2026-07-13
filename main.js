@@ -41,6 +41,7 @@
                     </div> 
                     <button class="navbar-hamburguesa">☰</button>
                     <ul class="navbar-menu">
+                        <li><a href="#Inici">Inici</a></li>
                         <li><a href="#menus">Menús</a></li>
                         <li><a href="javascript:void(0)" onclick="obrirModalCarta()">Carta</a></li>
                         <li><a href="javascript:void(0)" onclick="obrirModalVins()">Vins i Caves</a></li>
@@ -104,7 +105,7 @@
         const hero = document.getElementById('hero');
         if (hero) {
             hero.innerHTML = `
-                <section class="hero">
+                <section class="hero" id="Inici">
                     <img class="hero-imatge" src="${CONFIG.ASSETS}${CONFIG.BLOC_HERO}"
                         alt="${CONFIG.NOM}">
                     <div class="hero-overlay"></div>

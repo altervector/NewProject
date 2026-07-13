@@ -1,13 +1,9 @@
-/* ============================================================
-   CONFIG.JS - Configuració global del projecte
-   Canvia aquí les dades per adaptar-lo a cada negoci
-   ============================================================ */
-
 const CONFIG = {
 
     // 1. NEGOCI
     NOM:            "àgora",
     LOGO:           "logo/logoAGtrans.png",
+    LOGO_T:         "",
     SLOGAN:         "Plaça Vella",
     TELEFON:        "93 788 72 91",
     MOBIL:          "625 52 52 79",

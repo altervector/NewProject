@@ -112,7 +112,7 @@
                     <div class="hero-contingut">
                         <h1 class="hero-titol">${CONFIG.NOM}</h1>
                         <p class="hero-slogan">${CONFIG.SLOGAN}</p>
-                        <a href="#qui-som" class="hero-boto">Descobreix-nos</a>
+                        <a href="#qui-som" class="hero-boto">${CONFIG.HERO_BOTO}</a>
                     </div>
                 </section>
             `;
@@ -133,7 +133,7 @@
             seccions.innerHTML = `
 
                 <section class="seccio" id="menus">
-                    <h2 class="seccio-titol">Els nostres Menús</h2>
+                    <h2 class="seccio-titol">${CONFIG.SECCIO_TITOL}</h2>
                     <div class="menus-grid">
 
                         <div class="menu-bloc">
@@ -177,10 +177,10 @@
                 <hr class="separador">
 
                 <section class="seccio" id="horaris">
-                    <h2 class="seccio-titol">Horaris</h2>
-                    <p class="seccio-text">${CONFIG.HORA_1}</p>
-                    <p class="seccio-text">${CONFIG.HORA_2}</p>
-                    <p class="seccio-text">${CONFIG.HORA_3}</p>
+                    <h2 class="seccio-titol">${CONFIG.HORA_0}</h2>
+                    <p  class="seccio-text">${CONFIG.HORA_1}</p>
+                    <p  class="seccio-text">${CONFIG.HORA_2}</p>
+                    <p  class="seccio-text">${CONFIG.HORA_3}</p>
                 </section>
 
                 <hr class="separador">

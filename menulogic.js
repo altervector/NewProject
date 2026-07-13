@@ -51,7 +51,7 @@
         <!-- Div interior: el "full de paper" visible amb el contingut -->
                     <button onclick="tancarModalMenu()" style="position:absolute; 
                         top:12px; right:16px; background:none; border:none; 
-                        font-size:20px; cursor:pointer; color:#aaa; 
+                        font-size:20px; cursor:pointer; color:#FF0303; 
                         font-family:sans-serif;">✕</button>
                     <!-- Recipient buit — s'omple dinàmicament per pintarMenu() o pintarCarta() -->
                     <div id="modal-menu-contingut"></div>

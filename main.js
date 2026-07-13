@@ -1,22 +1,4 @@
-/* ============================================================
-   MAIN.JS - Contingut principal de la pàgina
-   Depèn de: config.js
-   Edita aquí el contingut de cada projecte
 
-   QUÈ FA AQUEST FITXER:
-   Construeix tota la interfície visible de la pàgina:
-   1. Navbar — logo, menú, hamburguesa, long press login
-   2. Hero — imatge, títol, slogan, botó
-   3. Seccions — menús, qui som, horaris, reserves
-   4. Footer — dades de contacte, xarxes, QR, powered by
-   5. Navbar scroll — efecte de fons en fer scroll
-   6. Visites — comptador de visites via Worker
-
-   PER QUÈ EL CONTINGUT ÉS AL JS I NO A L'HTML:
-   Perquè tot ve de CONFIG. Canviant config.js s'adapta
-   el projecte a qualsevol negoci sense tocar l'HTML.
-   L'HTML és només l'esquelet buit amb els ids de destí.
-   ============================================================ */
 
 /* ─── BOMBOLLA PRIVADA ─────────────────────────────────────────
    Tot privat — no exposa res a window.

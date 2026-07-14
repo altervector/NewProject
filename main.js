@@ -92,6 +92,7 @@
                         alt="${CONFIG.NOM}">
                     <div class="hero-overlay"></div>
                     <div class="hero-contingut">
+                        <h1 class="visually-hidden">Àgora Restaurant — Carta Digital a Terrassa</h1>
                         <h1 class="hero-titol">${CONFIG.NOM}</h1>
                         <p class="hero-slogan">${CONFIG.SLOGAN}</p>
                         <a href="#qui-som" class="hero-boto">${CONFIG.HERO_BOTO}</a>

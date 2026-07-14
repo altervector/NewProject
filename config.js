@@ -30,7 +30,7 @@ const CONFIG = {
     BLOC2:           "images/agora/finde.png",
     BLOC3:           "images/agora/grups.png",
     BLOC4:           "",
-    QR:              "qr/qr-àgora.png",
+    QR:              "qr/qr-agora.png",
 
     // 2.3 RUTES Textos
     HERO_BOTO:       "Descobreix-nos",

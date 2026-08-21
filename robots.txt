@@ -4,4 +4,4 @@ Disallow: /admin.html
 Disallow: /manteniment.html
 Disallow: /indexcopy.html
 
-Sitemap: https://agora.altervector.com/sitemap.xml
+Sitemap: https://agora.alterwebstudio.com/sitemap.xml

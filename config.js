@@ -7,18 +7,18 @@ const CONFIG = {
     SLOGAN:         "Plaça Vella",
     TELEFON:        "93 788 72 91",
     MOBIL:          "625 52 52 79",
-    EMAIL:          "agora@altervector.com", /*agora26vella@gmail.com */
+    EMAIL:          "agora@alterwebstudio.com", /*agora26vella@gmail.com */
     ADRECA:         "Carrer de Jaume Cantarer, 4, 08221 Terrassa, Barcelona",
     INSTAGRAM:      "https://www.instagram.com/agoraplazavella",
     FACEBOOK:       "https://www.facebook.com/profile.php?id=100054618451503",
-    EMAIL_SUPORT:   "suport@altervector.com",
+    EMAIL_SUPORT:   "info@alterwebstudio.com",
 
 
     // 2. RUTES (en local, tot és relatiu)
     REPO_URL:       "https://altervector.github.io/agora/",
     BASE_URL:       "./",
     BASE_WORKER:    "https://agora.altervector.workers.dev",
-    URL_OFICIAL:    "https://agora.altervector.com",
+    URL_OFICIAL:    "https://agora.alterwebstudio.com",
     ASSETS:         "https://avsets.pages.dev/",
     URL_MAPS:       "https://www.google.com/maps/search/?api=1&query=Agora+Plaza+Vella",
     URL_RESSENYES:  "https://search.google.com/local/writereview?placeid=ChIJGU4gT-qSpBIRLvqRcvS-P7E&source=g.page.m.ia._&laa=nmx-review-solicitation-ia2",

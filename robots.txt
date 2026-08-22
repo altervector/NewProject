@@ -1,7 +1,25 @@
 User-agent: *
 Allow: /
 Disallow: /admin.html
-Disallow: /manteniment.html
-Disallow: /indexcopy.html
+
+User-agent: GPTBot
+Allow: /
+Disallow: /admin.html
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin.html
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin.html
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin.html
+
+User-agent: CCBot
+Allow: /
+Disallow: /admin.html
 
 Sitemap: https://agora.alterwebstudio.com/sitemap.xml
